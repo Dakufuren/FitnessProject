@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">FitnessProject</string>
+    <string name="title_activity_login_handler">LoginHandler</string>
+    <string name="title_activity_main_menu_handler">MainMenuHandler</string>
+    <string name="title_activity_db_connecter">DbConnecter</string>
 </resources>
