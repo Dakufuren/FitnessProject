@@ -6,8 +6,13 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 
 public class LoginHandler extends AppCompatActivity {
+
+
+    private EditText username = (EditText)findViewById(R.id.textUser);
+    private EditText password = (EditText) findViewById(R.id.textPass);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
