@@ -6,27 +6,59 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class LoginHandler extends AppCompatActivity {
 
 
-    private EditText username = (EditText)findViewById(R.id.textUser);
-    private EditText password = (EditText) findViewById(R.id.textPass);
+    private EditText username;
+    private EditText password;
+    private Button loginButton;
+    DbConnecter db = new DbConnecter();
+    int switchornah = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_handler);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        username = (EditText)findViewById(R.id.textUser);
+        password = (EditText) findViewById(R.id.textPass);
+        loginButton = (Button) findViewById(R.id.loginButton);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        loginButton.setOnClickListener(new View.OnClickListener() {
+
+
+
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Thread thread1 = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String tmpPassword = password.getText().toString();
+                        String tmpUsername = username.getText().toString();
+                        switchornah = db.verifyLogin(tmpUsername, tmpPassword);
+                    }
+                });
+                thread1.start();
+
+
+                while (switchornah == 0) {
+
+                }
+
+
+                if (switchornah == 2) {
+                    thread1.interrupt();
+                    switchornah = 0;
+
+                    System.out.println("GRANTED ACCESS BITCH NIGGA");
+                } else if (switchornah == 1) {
+                    thread1.interrupt();
+                    switchornah = 0;
+                    System.out.println("ACCESS DENIED");
+                }
+
             }
         });
     }
