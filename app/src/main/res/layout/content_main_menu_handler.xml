@@ -15,56 +15,61 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
+        android:id="@+id/imageAdd"
         android:src="@drawable/placeholder"
         android:layout_marginLeft="50px"
-        />
+        android:onClick="onClickAdd" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton2"
+        android:id="@+id/imageView"
         android:src="@drawable/placeholder"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="50px"/>
+        android:layout_marginRight="50px"
+        android:onClick="onClickView" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton4"
+        android:id="@+id/imageProfile"
         android:src="@drawable/placeholder"
         android:layout_marginTop="320px"
-        android:layout_alignLeft="@+id/imageButton"
-        android:layout_alignStart="@+id/imageButton" />
+        android:layout_alignLeft="@+id/imageAdd"
+        android:layout_alignStart="@+id/imageAdd"
+        android:onClick="onClickProfile" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton5"
+        android:id="@+id/imageStats"
         android:src="@drawable/placeholder"
-        android:layout_alignTop="@+id/imageButton4"
-        android:layout_alignLeft="@+id/imageButton2"
-        android:layout_alignStart="@+id/imageButton2" />
+        android:layout_alignTop="@+id/imageProfile"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView"
+        android:onClick="onClickStats" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton6"
+        android:id="@+id/imageTips"
         android:src="@drawable/placeholder"
         android:layout_marginTop="640px"
-        android:layout_alignLeft="@+id/imageButton4"
-        android:layout_alignStart="@+id/imageButton4" />
+        android:layout_alignLeft="@+id/imageProfile"
+        android:layout_alignStart="@+id/imageProfile"
+        android:onClick="onClickTips" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton7"
+        android:id="@+id/imageLeftover"
         android:src="@drawable/placeholder"
-        android:layout_alignTop="@+id/imageButton6"
-        android:layout_alignLeft="@+id/imageButton5"
-        android:layout_alignStart="@+id/imageButton5" />
+        android:layout_alignTop="@+id/imageTips"
+        android:layout_alignLeft="@+id/imageStats"
+        android:layout_alignStart="@+id/imageStats"
+        android:onClick="onClickLeftover" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -72,9 +77,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Add"
         android:id="@+id/textView2"
-        android:layout_below="@+id/imageButton"
-        android:layout_alignLeft="@+id/imageButton"
-        android:layout_alignStart="@+id/imageButton" />
+        android:layout_below="@+id/imageAdd"
+        android:layout_alignLeft="@+id/imageAdd"
+        android:layout_alignStart="@+id/imageAdd" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -82,9 +87,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="View"
         android:id="@+id/textView3"
-        android:layout_below="@+id/imageButton2"
-        android:layout_alignLeft="@+id/imageButton2"
-        android:layout_alignStart="@+id/imageButton2" />
+        android:layout_below="@+id/imageView"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -92,9 +97,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Profile"
         android:id="@+id/textView4"
-        android:layout_below="@+id/imageButton4"
-        android:layout_alignLeft="@+id/imageButton4"
-        android:layout_alignStart="@+id/imageButton4" />
+        android:layout_below="@+id/imageProfile"
+        android:layout_alignLeft="@+id/imageProfile"
+        android:layout_alignStart="@+id/imageProfile" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -102,9 +107,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Statistic"
         android:id="@+id/textView5"
-        android:layout_below="@+id/imageButton5"
-        android:layout_alignLeft="@+id/imageButton5"
-        android:layout_alignStart="@+id/imageButton5" />
+        android:layout_below="@+id/imageStats"
+        android:layout_alignLeft="@+id/imageStats"
+        android:layout_alignStart="@+id/imageStats" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -112,9 +117,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Tips"
         android:id="@+id/textView6"
-        android:layout_below="@+id/imageButton6"
-        android:layout_alignLeft="@+id/imageButton6"
-        android:layout_alignStart="@+id/imageButton6" />
+        android:layout_below="@+id/imageTips"
+        android:layout_alignLeft="@+id/imageTips"
+        android:layout_alignStart="@+id/imageTips" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -123,7 +128,7 @@
         android:text="LEFTOVER"
         android:id="@+id/textView7"
         android:layout_alignTop="@+id/textView6"
-        android:layout_alignLeft="@+id/imageButton7"
-        android:layout_alignStart="@+id/imageButton7" />
+        android:layout_alignLeft="@+id/imageLeftover"
+        android:layout_alignStart="@+id/imageLeftover" />
 
 </RelativeLayout>

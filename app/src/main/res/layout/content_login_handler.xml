@@ -29,7 +29,8 @@
         android:id="@+id/textPass"
         android:layout_above="@+id/loginButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="46dp" />
+        android:layout_marginBottom="46dp"
+        android:text="test" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -40,5 +41,5 @@
         android:layout_alignStart="@+id/textPass"
         android:layout_alignRight="@+id/textPass"
         android:layout_alignEnd="@+id/textPass"
-        android:text="Username" />
+        android:text="test" />
 </RelativeLayout>
