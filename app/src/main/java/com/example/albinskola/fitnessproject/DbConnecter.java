@@ -14,7 +14,7 @@ package com.example.albinskola.fitnessproject;
 
 public class DbConnecter {
     Connection con = null;
-    String url = "jdbc:mysql://185.76.64.28:3306/etvffqgz_FitnessBass";
+    String url = "jdbc:mysql://185.76.64.28:3306/etvffqgz_FitnessNew";
     String usr = "etvffqgz_admin";
     String pass = "admin";
 
