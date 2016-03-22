@@ -1,5 +1,6 @@
 package com.example.albinskola.fitnessproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -53,6 +54,7 @@ public class LoginHandler extends AppCompatActivity {
                     switchornah = 0;
 
                     System.out.println("GRANTED ACCESS BITCH NIGGA");
+                    startActivity(new Intent(LoginHandler.this, MainMenuHandler.class));
                 } else if (switchornah == 1) {
                     thread1.interrupt();
                     switchornah = 0;
