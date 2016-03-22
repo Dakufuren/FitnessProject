@@ -61,8 +61,8 @@ public class LoginHandler extends AppCompatActivity {
                     thread1.interrupt();
                     switchornah = 0;
                     setLoggedIn();
-                    String test = pref.getString("username", null);
-                    System.out.println("YOU ARE LOGGED IN AS THIS MFER" + test);
+                    //String test = pref.getString("username", null);
+                    //System.out.println("YOU ARE LOGGED IN AS THIS MFER" + test);
                     System.out.println("GRANTED ACCESS BITCH NIGGA");
                     startActivity(new Intent(LoginHandler.this, MainMenuHandler.class));
 
