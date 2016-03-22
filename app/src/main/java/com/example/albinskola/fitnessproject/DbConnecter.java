@@ -18,14 +18,21 @@ public class DbConnecter {
     String pass = "admin";
 
 
+    public void connect() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+            con = DriverManager.getConnection(url, usr, pass);
+        } catch (Exception ex) {
+
+        }
+    }
+
 
     public int verifyLogin(String userName,String password) {
         try {
 
-            System.out.println(userName + " " + password);
-            Class.forName("com.mysql.jdbc.Driver");
-
-            con = DriverManager.getConnection(url, usr, pass);
+            connect();
 
             Statement st = con.createStatement();
 
