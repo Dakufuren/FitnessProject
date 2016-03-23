@@ -30,7 +30,7 @@ public class MainMenuHandler extends AppCompatActivity {
     public void onClickView(View v){
         System.out.println("View Clicked!!!");
         /*
-        Intent intent = new Intent(MainMenuHandler.this, ViewWorkoutHandler.class);
+        Intent intent = new Intent(MainMenuHandler.this, );
         startActivity(intent);
         */
     }
@@ -38,7 +38,7 @@ public class MainMenuHandler extends AppCompatActivity {
     public void onClickProfile(View v){
         System.out.println("Profile Clicked!!!");
         /*
-        Intent intent = new Intent(MainMenuHandler.this, ViewWorkoutHandler.class);
+        Intent intent = new Intent(MainMenuHandler.this, V);
         startActivity(intent);
         */
     }
@@ -46,7 +46,7 @@ public class MainMenuHandler extends AppCompatActivity {
     public void onClickStats(View v){
         System.out.println("Stats Clicked!!!");
         /*
-        Intent intent = new Intent(MainMenuHandler.this, ViewWorkoutHandler.class);
+        Intent intent = new Intent(MainMenuHandler.this, );
         startActivity(intent);
         */
     }
@@ -54,7 +54,7 @@ public class MainMenuHandler extends AppCompatActivity {
     public void onClickTips(View v){
         System.out.println("Tips Clicked!!!");
         /*
-        Intent intent = new Intent(MainMenuHandler.this, ViewWorkoutHandler.class);
+        Intent intent = new Intent(MainMenuHandler.this,
         startActivity(intent);
         */
 
@@ -63,7 +63,7 @@ public class MainMenuHandler extends AppCompatActivity {
     public void onClickLeftover(View v){
         System.out.println("Leftover Clicked!!!");
         /*
-        Intent intent = new Intent(MainMenuHandler.this, ViewWorkoutHandler.class);
+        Intent intent = new Intent(MainMenuHandler.this, );
         startActivity(intent);
         */
 
