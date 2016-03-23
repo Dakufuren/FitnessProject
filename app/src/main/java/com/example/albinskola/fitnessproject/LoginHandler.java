@@ -22,6 +22,7 @@ public class LoginHandler extends AppCompatActivity {
     private EditText username;
     private EditText password;
     private Button loginButton;
+    private Button signupButton;
     DbConnecter db = new DbConnecter();
     int switchornah = 0;
 
@@ -32,6 +33,16 @@ public class LoginHandler extends AppCompatActivity {
         username = (EditText)findViewById(R.id.textUser);
         password = (EditText) findViewById(R.id.textPass);
         loginButton = (Button) findViewById(R.id.loginButton);
+        signupButton = (Button) findViewById(R.id.SignupButton);
+
+        signupButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginHandler.this, SignupHandler.class));
+
+
+            }
+        });
 
 
 

@@ -105,6 +105,38 @@ public class DbConnecter {
         return workoutList;
     }
 
+    public int addUser(String userName, String firstName, String lastName, String passWord, String email, int wieght, int height, String sex) {
+
+
+        int isAdded = 2;
+        try {
+
+            connect();
+
+            Statement st = con.createStatement();
+            Statement st2 = con.createStatement();
+
+            String userString = String.format("INSERT INTO Users (UserName, FirstName, LastName, Password, Email) VALUES ('%s', '%s', '%s', '%s', '%s')", userName, firstName, lastName, passWord, email);
+            st.executeUpdate(userString);
+
+            String profileString = String.format("INSERT INTO Profile (Users_UserName, Weight, Height, sex) VALUES ('%s', %d, %d, '%s')", userName, wieght, height, sex);
+            st2.executeUpdate(profileString);
+
+
+
+
+
+        } catch (Exception ex) {
+            isAdded = 1;
+            System.out.println(ex);
+        }
+
+        return isAdded;
+
+
+
+    }
+
 
 
 }

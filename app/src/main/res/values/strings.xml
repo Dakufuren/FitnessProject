@@ -3,4 +3,5 @@
     <string name="title_activity_login_handler">LoginHandler</string>
     <string name="title_activity_main_menu_handler">MainMenuHandler</string>
     <string name="title_activity_db_connecter">DbConnecter</string>
+    <string name="title_activity_signup_handler">SignupHandler</string>
 </resources>

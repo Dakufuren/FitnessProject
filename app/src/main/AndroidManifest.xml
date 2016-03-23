@@ -28,9 +28,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AddWorkoutHandler"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
-
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SignupHandler"
+            android:label="@string/title_activity_signup_handler"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

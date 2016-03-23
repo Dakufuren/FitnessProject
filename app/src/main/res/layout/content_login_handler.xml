@@ -42,4 +42,14 @@
         android:layout_alignRight="@+id/textPass"
         android:layout_alignEnd="@+id/textPass"
         android:text="test" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        android:id="@+id/SignupButton"
+        android:layout_below="@+id/loginButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp" />
 </RelativeLayout>
