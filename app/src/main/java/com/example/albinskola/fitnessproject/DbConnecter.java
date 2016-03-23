@@ -73,7 +73,7 @@ public class DbConnecter {
 
             Statement st = con.createStatement();
 
-            String sqlWorkout = String.format("INSERT INTO Workouts (Users_UserName, TheDate, ElapsedTime, Intensity, Note, Biceps, Triceps, Shoulders, Traps, UpperBack, LowerBack, Chest, Abdomen, Glutes, Hamstrings, Quadriceps, Calves) VALUES ('%s', '%s', %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d)", userName, date, elapsedTime, intensity, description, biceps, triceps, shoulders, traps,
+            String sqlWorkout = String.format("INSERT INTO Workouts (Users_UserName, TheDate, ElapsedTime, Intensity, Note, Biceps, Triceps, Shoulders, Traps, UpperBack, LowerBack, Chest, Abdomen, Glutes, Hamstrings, Quadriceps, Calves) VALUES ('%s', '%s', %d, %d, '%s', %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d)", userName, date, elapsedTime, intensity, description, biceps, triceps, shoulders, traps,
                     upperBack, lowerBack, chest, abdomen, glutes, hamstrings, quadriceps, calves);
 
             st.executeUpdate(sqlWorkout);
