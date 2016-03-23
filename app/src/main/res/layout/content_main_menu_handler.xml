@@ -18,7 +18,19 @@
         android:id="@+id/imageAdd"
         android:src="@drawable/placeholder"
         android:layout_marginLeft="50px"
-        android:onClick="onClickAdd" />
+        android:onClick="onClickAdd"
+        android:background="#00ffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Add"
+        android:layout_marginBottom="30dp"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/imageAdd"
+        android:layout_alignLeft="@+id/imageAdd"
+        android:layout_alignStart="@+id/imageAdd" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -29,57 +41,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="50px"
-        android:onClick="onClickView" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageProfile"
-        android:src="@drawable/placeholder"
-        android:layout_marginTop="320px"
-        android:layout_alignLeft="@+id/imageAdd"
-        android:layout_alignStart="@+id/imageAdd"
-        android:onClick="onClickProfile" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageStats"
-        android:src="@drawable/placeholder"
-        android:layout_alignTop="@+id/imageProfile"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView"
-        android:onClick="onClickStats" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageTips"
-        android:src="@drawable/placeholder"
-        android:layout_marginTop="640px"
-        android:layout_alignLeft="@+id/imageProfile"
-        android:layout_alignStart="@+id/imageProfile"
-        android:onClick="onClickTips" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageLeftover"
-        android:src="@drawable/placeholder"
-        android:layout_alignTop="@+id/imageTips"
-        android:layout_alignLeft="@+id/imageStats"
-        android:layout_alignStart="@+id/imageStats"
-        android:onClick="onClickLeftover" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Add"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/imageAdd"
-        android:layout_alignLeft="@+id/imageAdd"
-        android:layout_alignStart="@+id/imageAdd" />
+        android:onClick="onClickView"
+        android:background="#00ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -91,15 +54,38 @@
         android:layout_alignLeft="@+id/imageView"
         android:layout_alignStart="@+id/imageView" />
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageProfile"
+        android:src="@drawable/placeholder"
+        android:onClick="onClickProfile"
+        android:background="#00ffffff"
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Profile"
         android:id="@+id/textView4"
         android:layout_below="@+id/imageProfile"
         android:layout_alignLeft="@+id/imageProfile"
         android:layout_alignStart="@+id/imageProfile" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageStats"
+        android:src="@drawable/placeholder"
+        android:layout_alignTop="@+id/imageProfile"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView"
+        android:onClick="onClickStats"
+        android:background="#00ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -111,6 +97,17 @@
         android:layout_alignLeft="@+id/imageStats"
         android:layout_alignStart="@+id/imageStats" />
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageTips"
+        android:src="@drawable/placeholder"
+        android:onClick="onClickTips"
+        android:background="#00ffffff"
+        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -120,6 +117,17 @@
         android:layout_below="@+id/imageTips"
         android:layout_alignLeft="@+id/imageTips"
         android:layout_alignStart="@+id/imageTips" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageLeftover"
+        android:src="@drawable/placeholder"
+        android:layout_alignTop="@+id/imageTips"
+        android:layout_alignLeft="@+id/imageStats"
+        android:layout_alignStart="@+id/imageStats"
+        android:onClick="onClickLeftover"
+        android:background="#00ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
