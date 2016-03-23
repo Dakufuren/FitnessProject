@@ -65,7 +65,7 @@ public class DbConnecter {
         return 1;
     }
 
-    public int addWorkOut(String userName, Date date, int elapsedTime, int intensity, String description, int biceps, int triceps, int shoulders, int traps,
+    public int addWorkOut(String userName, String date, int elapsedTime, int intensity, String description, int biceps, int triceps, int shoulders, int traps,
                            int upperBack, int lowerBack, int chest, int abdomen, int glutes, int hamstrings, int quadriceps, int calves) {
         int isAdded = 2;
         try {
