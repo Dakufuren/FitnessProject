@@ -9,4 +9,166 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.albinskola.fitnessproject.AddWorkoutHandler">
 
+    <EditText
+        android:layout_width="150px"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/editTextElapsed"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="150px"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editTextIntentsity"
+        android:layout_below="@+id/editTextElapsed"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editTextNote"
+        android:layout_below="@+id/editTextIntentsity"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150px"
+        android:layout_height="100px"
+        android:text="bic"
+        android:id="@+id/buttonBiceps"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150px"
+        android:layout_height="100px"
+        android:text="tric"
+        android:id="@+id/buttonTriceps"
+        android:layout_below="@+id/buttonBiceps"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150px"
+        android:layout_height="100px"
+        android:text="shou"
+        android:id="@+id/buttonShoulders"
+        android:layout_below="@+id/buttonTriceps"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150px"
+        android:layout_height="100px"
+        android:text="traps"
+        android:id="@+id/buttonTraps"
+        android:layout_below="@+id/buttonShoulders"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150px"
+        android:layout_height="100px"
+        android:text="U back"
+        android:id="@+id/buttonUback"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/editTextNote"
+        android:layout_alignEnd="@+id/editTextNote" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150px"
+        android:layout_height="100px"
+        android:text="L back"
+        android:id="@+id/buttonLback"
+        android:layout_above="@+id/buttonShoulders"
+        android:layout_alignRight="@+id/buttonUback"
+        android:layout_alignEnd="@+id/buttonUback" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150px"
+        android:layout_height="100px"
+        android:text="Chest"
+        android:id="@+id/buttonChest"
+        android:layout_below="@+id/buttonLback"
+        android:layout_alignRight="@+id/buttonLback"
+        android:layout_alignEnd="@+id/buttonLback" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150px"
+        android:layout_height="100px"
+        android:text="Abd"
+        android:id="@+id/buttonAbd"
+        android:layout_alignBottom="@+id/buttonTraps"
+        android:layout_alignRight="@+id/buttonChest"
+        android:layout_alignEnd="@+id/buttonChest" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150px"
+        android:layout_height="100px"
+        android:text="Glutes"
+        android:id="@+id/buttonGlutes"
+        android:layout_alignTop="@+id/buttonUback"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150px"
+        android:layout_height="100px"
+        android:text="Hamst"
+        android:id="@+id/buttonHamstrings"
+        android:layout_below="@+id/buttonGlutes"
+        android:layout_alignLeft="@+id/buttonGlutes"
+        android:layout_alignStart="@+id/buttonGlutes" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150px"
+        android:layout_height="100px"
+        android:text="Quad"
+        android:id="@+id/buttonQuad"
+        android:layout_below="@+id/buttonHamstrings"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150px"
+        android:layout_height="100px"
+        android:text="Calv"
+        android:id="@+id/buttonCalves"
+        android:layout_below="@+id/buttonQuad"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add workout"
+        android:id="@+id/buttonAddWorkout"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/buttonAbd"
+        android:layout_alignStart="@+id/buttonAbd" />
 </RelativeLayout>
