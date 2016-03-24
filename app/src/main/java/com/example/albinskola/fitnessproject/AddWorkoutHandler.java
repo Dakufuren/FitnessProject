@@ -176,41 +176,74 @@ public class AddWorkoutHandler extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                System.out.println("Submitted total workout!!!!!!!" + date);
 
-                Thread thread1 = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        String userName = pref.getString("username", null);
-                        note = noteText.getText().toString();
-                        elapsedTime = Integer.parseInt(elapsedTimeText.getText().toString());
-                        intensity = Integer.parseInt(intensityText.getText().toString());
+                if (elapsedTimeText.getText().toString().length() < 1 || intensityText.getText().toString().length() < 1) {
+                    System.out.println("SPECIFY WORKOUT LENGTH AND INTENSITY");
+                }
 
-                        successOrNah = db.addWorkOut(userName,date, elapsedTime, intensity, note, biceps, triceps, shoulders, traps, upperback, lowerback, chest, abdomen, glutes, hamstrings, quadriceps, calves );
+                else if(biceps == 0 && triceps == 0 && shoulders == 0 && traps == 0 && upperback == 0 && lowerback == 0 && chest == 0 && abdomen == 0 && glutes == 0 && hamstrings == 0 && quadriceps == 0 && calves == 0) {
+                    System.out.println("YOU HAVE TO ADD A BODY PART");
 
+
+                } else {
+
+
+                    System.out.println("Submitted total workout!!!!!!!" + date);
+
+                    Thread thread1 = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            String userName = pref.getString("username", null);
+                            note = noteText.getText().toString();
+                            elapsedTime = Integer.parseInt(elapsedTimeText.getText().toString());
+                            intensity = Integer.parseInt(intensityText.getText().toString());
+
+
+                            successOrNah = db.addWorkOut(userName, date, elapsedTime, intensity, note, biceps, triceps, shoulders, traps, upperback, lowerback, chest, abdomen, glutes, hamstrings, quadriceps, calves);
+
+
+                        }
+                    });
+                    thread1.start();
+
+                    while (successOrNah == 0) {
 
                     }
-                });
-                thread1.start();
 
-                while (successOrNah == 0) {
+                    if (successOrNah == 2) {
+                        thread1.interrupt();
+                        System.out.println("WORKOUT ADDED!!!!");
+
+                    } else if (successOrNah == 1) {
+                        thread1.interrupt();
+                        System.out.println("FAILED");
+                    }
+
 
                 }
-
-                if (successOrNah == 2) {
-                    thread1.interrupt();
-                    System.out.println("WORKOUT ADDED!!!!");
-
-                } else if (successOrNah == 1) {
-                    thread1.interrupt();
-                    System.out.println("FAILED");
-                }
-
-
+                clearWorkoutButtons();
 
             }
+
         });
 
+    }
+
+    private void clearWorkoutButtons(){
+        elapsedTime = 0;
+        intensity = 0;
+        biceps = 0;
+        triceps = 0;
+        shoulders = 0;
+        traps = 0;
+        upperback = 0;
+        lowerback = 0;
+        chest = 0;
+        abdomen = 0;
+        glutes = 0;
+        hamstrings = 0;
+        quadriceps = 0;
+        calves = 0;
     }
 
 
