@@ -140,7 +140,7 @@ public class DbConnecter {
 
             Statement st = con.createStatement();
 
-            String sqlStatement = String.format("SELECT * FROM Profile WHERE Users_UserName = %s", username);
+            String sqlStatement = String.format("SELECT * FROM Profile WHERE Users_UserName = '%s'", username);
 
             ResultSet rs = st.executeQuery(sqlStatement);
 
@@ -164,7 +164,7 @@ public class DbConnecter {
 
             Statement st = con.createStatement();
 
-            String sqlStatement = String.format("UPDATE Profile SET Weight = %d, Height = %d, Sex = %s WHERE Users_UserName = %s", weight, height, sex, username);
+            String sqlStatement = String.format("UPDATE Profile SET Weight = %d, Height = %d, Sex = '%s' WHERE Users_UserName = '%s'", weight, height, sex, username);
 
             st.executeUpdate(sqlStatement);
 

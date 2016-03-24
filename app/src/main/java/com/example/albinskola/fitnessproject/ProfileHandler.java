@@ -49,8 +49,12 @@ public class ProfileHandler extends AppCompatActivity {
         if (po != null) {
             thread1.interrupt();
 
-            weightField.setText(po.getWeight());
-            heightField.setText(po.getHeight());
+            String weight = "" + po.getWeight();
+            String height = "" + po.getHeight();
+
+
+            weightField.setText(weight);
+            heightField.setText(height);
             sexField.setText(po.getSex());
 
         }
