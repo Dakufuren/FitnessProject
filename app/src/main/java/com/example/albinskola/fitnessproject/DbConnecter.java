@@ -1,18 +1,10 @@
 package com.example.albinskola.fitnessproject;
 
-    import android.content.SharedPreferences;
-    import android.net.NetworkInfo;
-    import android.os.AsyncTask;
-    import android.os.StrictMode;
-    import android.support.v7.app.AppCompatActivity;
-
     import java.sql.Connection;
     import java.sql.DriverManager;
     import java.sql.ResultSet;
-    import java.sql.SQLException;
     import java.sql.Statement;
     import java.util.ArrayList;
-    import java.util.Date;
 
 public class DbConnecter {
 
@@ -94,7 +86,7 @@ public class DbConnecter {
 
             Statement st = con.createStatement();
 
-            ResultSet rs = st.executeQuery("SELECT * FROM Workouts where Users_UserName = " + userName);
+            ResultSet rs = st.executeQuery("SELECT * FROM Workouts WHERE Users_UserName = '" + userName + "'");
 
             while (rs.next()) {
                 wo = new Workout(rs.getDate("TheDate"), rs.getInt("ElapsedTime"), rs.getInt("Intensity"), rs.getString("Note"), rs.getInt("Biceps"), rs.getInt("Triceps"), rs.getInt("Shoulders"), rs.getInt("Traps"), rs.getInt("UpperBack"), rs.getInt("LowerBack"), rs.getInt("Chest"), rs.getInt("Abdomen"), rs.getInt("Glutes"), rs.getInt("Hamstrings"), rs.getByte("Quadriceps"), rs.getInt("Calves"));
@@ -137,6 +129,55 @@ public class DbConnecter {
 
 
 
+    }
+
+    public ProfileObject getProfile(String username) {
+        ProfileObject po = null;
+
+
+        try {
+            connect();
+
+            Statement st = con.createStatement();
+
+            String sqlStatement = String.format("SELECT * FROM Profile WHERE Users_UserName = %s", username);
+
+            ResultSet rs = st.executeQuery(sqlStatement);
+
+            while (rs.next()) {
+                po = new ProfileObject(rs.getInt("Weight"), rs.getInt("Height"), rs.getString("Sex"));
+            }
+
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+
+        return po;
+    }
+
+    public int setProfile(String username, int weight, int height, String sex) {
+        int isAdded = 2;
+
+        try {
+            connect();
+
+            Statement st = con.createStatement();
+
+            String sqlStatement = String.format("UPDATE Profile SET Weight = %d, Height = %d, Sex = %s WHERE Users_UserName = %s", weight, height, sex, username);
+
+            st.executeUpdate(sqlStatement);
+
+
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+            isAdded = 1;
+        }
+
+
+
+        return isAdded;
     }
 
 

@@ -12,6 +12,8 @@ public class ProfileHandler extends AppCompatActivity {
     private EditText weightField;
     private EditText heightField;
     private EditText sexField;
+    private ProfileObject po;
+    DbConnecter db = new DbConnecter();
 
 
 
@@ -24,6 +26,14 @@ public class ProfileHandler extends AppCompatActivity {
         weightField = (EditText) findViewById(R.id.WeightField);
         heightField = (EditText) findViewById(R.id.HeightField);
         sexField = (EditText) findViewById(R.id.SexField);
+
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                //po = db.getProfile();
+            }
+        });
+        thread1.start();
 
 
         submitButton.setOnClickListener(new View.OnClickListener() {
