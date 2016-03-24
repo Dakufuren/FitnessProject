@@ -2,6 +2,8 @@ package com.example.albinskola.fitnessproject;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.LightingColorFilter;
+import android.graphics.PorterDuff;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -90,6 +92,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         bicepsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 biceps = 1;
+                bicepsButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
                 System.out.println(biceps);
 
                 System.out.println("Added biceps workout");
@@ -99,6 +102,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         tricepsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 triceps = 1;
+                tricepsButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added triceps workout");
             }
         });
@@ -106,6 +110,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         shouldersButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 shoulders = 1;
+                shouldersButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added shoulder workout");
             }
         });
@@ -113,6 +118,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         trapsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 traps = 1;
+                trapsButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added traps workout");
             }
         });
@@ -120,6 +126,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         upperbackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 upperback = 1;
+                upperbackButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added upperback workout");
             }
         });
@@ -127,6 +134,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         lowerbackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 lowerback = 1;
+                lowerbackButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added lowerback workout");
             }
         });
@@ -134,6 +142,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         chestButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 chest = 1;
+                chestButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added chest workout");
             }
         });
@@ -141,6 +150,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         abdomenButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 abdomen = 1;
+                abdomenButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added abdomen workout");
             }
         });
@@ -148,6 +158,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         glutesButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 glutes = 1;
+                glutesButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added glutes workout");
             }
         });
@@ -155,6 +166,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         hamstringsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 hamstrings = 1;
+                hamstringsButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added hamstrings workout");
             }
         });
@@ -162,6 +174,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         quadricepsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 quadriceps = 1;
+                quadricepsButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added quadriceps workout");
             }
         });
@@ -169,6 +182,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         calvesButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 calves = 1;
+                calvesButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added calves workout");
             }
         });
@@ -244,6 +258,18 @@ public class AddWorkoutHandler extends AppCompatActivity {
         hamstrings = 0;
         quadriceps = 0;
         calves = 0;
+        bicepsButton.getBackground().clearColorFilter();
+        tricepsButton.getBackground().clearColorFilter();
+        shouldersButton.getBackground().clearColorFilter();
+        trapsButton.getBackground().clearColorFilter();
+        upperbackButton.getBackground().clearColorFilter();
+        lowerbackButton.getBackground().clearColorFilter();
+        chestButton.getBackground().clearColorFilter();
+        abdomenButton.getBackground().clearColorFilter();
+        glutesButton.getBackground().clearColorFilter();
+        hamstringsButton.getBackground().clearColorFilter();
+        quadricepsButton.getBackground().clearColorFilter();
+        calvesButton.getBackground().clearColorFilter();
     }
 
 
