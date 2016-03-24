@@ -29,18 +29,15 @@ public class MainMenuHandler extends AppCompatActivity {
 
     public void onClickView(View v){
         System.out.println("View Clicked!!!");
-        /*
-        Intent intent = new Intent(MainMenuHandler.this, );
+        Intent intent = new Intent(MainMenuHandler.this, ViewWorkoutHandler.class);
         startActivity(intent);
-        */
+
     }
 
     public void onClickProfile(View v){
         System.out.println("Profile Clicked!!!");
-        /*
-        Intent intent = new Intent(MainMenuHandler.this, V);
+        Intent intent = new Intent(MainMenuHandler.this, ProfileHandler.class);
         startActivity(intent);
-        */
     }
 
     public void onClickStats(View v){
