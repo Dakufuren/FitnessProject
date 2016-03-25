@@ -42,10 +42,8 @@ public class MainMenuHandler extends AppCompatActivity {
 
     public void onClickStats(View v){
         System.out.println("Stats Clicked!!!");
-        /*
-        Intent intent = new Intent(MainMenuHandler.this, );
+        Intent intent = new Intent(MainMenuHandler.this, StatisticsHandler.class);
         startActivity(intent);
-        */
     }
 
     public void onClickTips(View v){
