@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -193,10 +194,12 @@ public class AddWorkoutHandler extends AppCompatActivity {
 
                 if (elapsedTimeText.getText().toString().length() < 1 || intensityText.getText().toString().length() < 1) {
                     System.out.println("SPECIFY WORKOUT LENGTH AND INTENSITY");
+                    Toast.makeText(getApplicationContext(), "please specify time and intensity of workout", Toast.LENGTH_SHORT).show();
                 }
 
                 else if(biceps == 0 && triceps == 0 && shoulders == 0 && traps == 0 && upperback == 0 && lowerback == 0 && chest == 0 && abdomen == 0 && glutes == 0 && hamstrings == 0 && quadriceps == 0 && calves == 0) {
                     System.out.println("YOU HAVE TO ADD A BODY PART");
+                    Toast.makeText(getApplicationContext(), "please add body part", Toast.LENGTH_SHORT).show();
 
 
                 } else {
@@ -227,6 +230,10 @@ public class AddWorkoutHandler extends AppCompatActivity {
                     if (successOrNah == 2) {
                         thread1.interrupt();
                         System.out.println("WORKOUT ADDED!!!!");
+                        Toast.makeText(getApplicationContext(), "Workout added!", Toast.LENGTH_SHORT).show();
+                        clearTextFields();
+                        Intent intent = new Intent(AddWorkoutHandler.this, MainMenuHandler.class);
+                        startActivity(intent);
 
                     } else if (successOrNah == 1) {
                         thread1.interrupt();
@@ -270,6 +277,13 @@ public class AddWorkoutHandler extends AppCompatActivity {
         hamstringsButton.getBackground().clearColorFilter();
         quadricepsButton.getBackground().clearColorFilter();
         calvesButton.getBackground().clearColorFilter();
+
+    }
+
+    private void clearTextFields(){
+        elapsedTimeText.setText("");
+        intensityText.setText("");
+        noteText.setText("");
     }
 
 
