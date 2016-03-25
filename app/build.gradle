@@ -25,4 +25,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
     compile files('src/libs/mysql-connector-java-3.0.17-ga-bin.jar')
+    compile files('src/libs/GraphView-4.0.1.jar')
 }

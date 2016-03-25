@@ -5,4 +5,5 @@
     <string name="title_activity_db_connecter">DbConnecter</string>
     <string name="title_activity_signup_handler">SignupHandler</string>
     <string name="title_activity_view_workout_handler">ViewWorkoutHandler</string>
+    <string name="title_activity_statistics_handler">StatisticsHandler</string>
 </resources>

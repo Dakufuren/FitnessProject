@@ -34,7 +34,11 @@
             android:label="@string/title_activity_signup_handler"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ViewWorkoutHandler" />
-        <activity android:name=".ProfileHandler"></activity>
+        <activity android:name=".ProfileHandler" />
+        <activity
+            android:name=".StatisticsHandler"
+            android:label="@string/title_activity_statistics_handler"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
