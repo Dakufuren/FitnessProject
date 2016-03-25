@@ -26,7 +26,7 @@ public class ViewWorkoutHandler extends AppCompatActivity {
     DbConnecter db = new DbConnecter();
     public static final String PREFS_NAME = "shared_pref";
     SharedPreferences pref;
-    List<Workout> nls;
+    List<WorkoutObject> nls;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +47,10 @@ public class ViewWorkoutHandler extends AppCompatActivity {
             public void run() {
                 String userName = pref.getString("username", null);
 
-                ArrayList<Workout> ls = new ArrayList<>();
+                ArrayList<WorkoutObject> ls = new ArrayList<>();
                 ls = db.getWorkOuts(userName);
 
-                nls = Collections.synchronizedList(new ArrayList<Workout>());
+                nls = Collections.synchronizedList(new ArrayList<WorkoutObject>());
                 nls = ls;
 
             }

@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by bumblebee on 2016-03-22.
  */
-public class Workout {
+public class WorkoutObject {
 
 
     Date date = null;
@@ -25,7 +25,7 @@ public class Workout {
     int quadriceps = 0;
     int calves = 0;
 
-    public Workout(Date date, int elapsedTime, int intensity, String description, int biceps, int triceps, int shoulders, int traps,
+    public WorkoutObject(Date date, int elapsedTime, int intensity, String description, int biceps, int triceps, int shoulders, int traps,
                    int upperBack, int lowerBack, int chest, int abdomen, int glutes, int hamstrings, int quadriceps, int calves) {
         this.date = date;
         this.elapsedTime = elapsedTime;
