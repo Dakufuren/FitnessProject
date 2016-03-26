@@ -84,7 +84,7 @@ public class SignupHandler extends AppCompatActivity {
                     } else if (successOrNah == 1) {
                         thread1.interrupt();
                         System.out.println("CREATION FAILED");
-                        Toast.makeText(getApplicationContext(), "please enter information in all fields!", Toast.LENGTH_SHORT).show();
+
                     }
 
                 }
