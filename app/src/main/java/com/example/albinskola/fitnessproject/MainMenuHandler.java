@@ -1,24 +1,48 @@
 package com.example.albinskola.fitnessproject;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 
 public class MainMenuHandler extends AppCompatActivity {
+
+    DbConnecter db = new DbConnecter();
+    public static final String PREFS_NAME = "shared_pref";
+    SharedPreferences pref;
+    List<Workout> nls;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu_handler);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
+        pref = getApplicationContext().getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String userName = pref.getString("username", null);
 
+                ArrayList<Workout> ls = new ArrayList<>();
+                ls = db.getWorkOuts(userName);
+
+                nls = Collections.synchronizedList(new ArrayList<Workout>());
+                nls = ls;
+            }
+        });
+        thread1.start();
     }
 
     public void onClickAdd(View v){
@@ -28,10 +52,21 @@ public class MainMenuHandler extends AppCompatActivity {
     }
 
     public void onClickView(View v){
-        System.out.println("View Clicked!!!");
-        Intent intent = new Intent(MainMenuHandler.this, ViewWorkoutHandler.class);
-        startActivity(intent);
 
+        if(nls.size() >= 1) {
+            System.out.println("View Clicked!!!");
+            Intent intent = new Intent(MainMenuHandler.this, ViewWorkoutHandler.class);
+            startActivity(intent);
+        }
+
+        else{
+            Context context = getApplicationContext();
+            CharSequence text = "No training session to show!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }
     }
 
     public void onClickProfile(View v){
