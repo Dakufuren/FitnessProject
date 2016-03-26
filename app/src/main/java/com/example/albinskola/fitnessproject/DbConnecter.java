@@ -79,8 +79,8 @@ public class DbConnecter {
     }
 
     public ArrayList getWorkOuts (String userName) {
-        Workout wo;
-        ArrayList<Workout> workoutList = new ArrayList();
+        WorkoutObject wo;
+        ArrayList<WorkoutObject> workoutList = new ArrayList();
         try {
             connect();
 
@@ -89,7 +89,7 @@ public class DbConnecter {
             ResultSet rs = st.executeQuery("SELECT * FROM Workouts WHERE Users_UserName = '" + userName + "'");
 
             while (rs.next()) {
-                wo = new Workout(rs.getDate("TheDate"), rs.getInt("ElapsedTime"), rs.getInt("Intensity"), rs.getString("Note"), rs.getInt("Biceps"), rs.getInt("Triceps"), rs.getInt("Shoulders"), rs.getInt("Traps"), rs.getInt("UpperBack"), rs.getInt("LowerBack"), rs.getInt("Chest"), rs.getInt("Abdomen"), rs.getInt("Glutes"), rs.getInt("Hamstrings"), rs.getByte("Quadriceps"), rs.getInt("Calves"));
+                wo = new WorkoutObject(rs.getDate("TheDate"), rs.getInt("ElapsedTime"), rs.getInt("Intensity"), rs.getString("Note"), rs.getInt("Biceps"), rs.getInt("Triceps"), rs.getInt("Shoulders"), rs.getInt("Traps"), rs.getInt("UpperBack"), rs.getInt("LowerBack"), rs.getInt("Chest"), rs.getInt("Abdomen"), rs.getInt("Glutes"), rs.getInt("Hamstrings"), rs.getByte("Quadriceps"), rs.getInt("Calves"));
                 workoutList.add(wo);
             }
         } catch (Exception ex) {

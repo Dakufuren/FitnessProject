@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class SignupHandler extends AppCompatActivity {
 
@@ -51,35 +52,55 @@ public class SignupHandler extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Thread thread1 = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        int weight = Integer.parseInt(weightField.getText().toString());
-                        int height = Integer.parseInt(heightField.getText().toString());
+                if (usernameField.getText().toString().length() < 1 || firstnameField.getText().toString().length() < 1 || lastnameField.getText().toString().length() < 1 || passwordField.getText().toString().length() < 1 || emailField.getText().toString().length() < 1 || weightField.getText().toString().length() < 1 || heightField.getText().toString().length() < 1 || sexField.getText().toString().length() < 1) {
 
-                        successOrNah = db.addUser(usernameField.getText().toString(), firstnameField.getText().toString(), lastnameField.getText().toString(),
-                                passwordField.getText().toString(), emailField.getText().toString(), weight, height, sexField.getText().toString());
+                    Toast.makeText(getApplicationContext(), "please enter information in all fields", Toast.LENGTH_SHORT).show();
+                } else {
 
+                    Thread thread1 = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            int weight = Integer.parseInt(weightField.getText().toString());
+                            int height = Integer.parseInt(heightField.getText().toString());
+
+                            successOrNah = db.addUser(usernameField.getText().toString(), firstnameField.getText().toString(), lastnameField.getText().toString(),
+                                    passwordField.getText().toString(), emailField.getText().toString(), weight, height, sexField.getText().toString());
+
+
+                        }
+                    });
+                    thread1.start();
+
+                    while (successOrNah == 0) {
 
                     }
-                });
-                thread1.start();
 
-                while (successOrNah == 0) {
+                    if (successOrNah == 2) {
+                        thread1.interrupt();
+                        System.out.println("USER IS CREATED");
+                        clearFields();
+                        Toast.makeText(getApplicationContext(), "Thank you for signing up!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(SignupHandler.this, LoginHandler.class));
+                    } else if (successOrNah == 1) {
+                        thread1.interrupt();
+                        System.out.println("CREATION FAILED");
+
+                    }
 
                 }
-
-                if (successOrNah == 2) {
-                    thread1.interrupt();
-                    System.out.println("USER IS CREATED");
-                    startActivity(new Intent(SignupHandler.this, LoginHandler.class));
-                } else if (successOrNah == 1) {
-                    thread1.interrupt();
-                    System.out.println("CREATION FAILED");
-                }
-
             }
         });
+    }
+
+    private void clearFields(){
+        usernameField.setText("");
+        firstnameField.setText("");
+        lastnameField.setText("");
+        passwordField.setText("");
+        emailField.setText("");
+        weightField.setText("");
+        heightField.setText("");
+        sexField.setText("");
     }
 
 }

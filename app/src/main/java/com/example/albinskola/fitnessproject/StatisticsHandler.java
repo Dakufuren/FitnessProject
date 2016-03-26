@@ -1,5 +1,6 @@
 package com.example.albinskola.fitnessproject;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,20 +15,29 @@ import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
-public class StatisticsHandler extends AppCompatActivity {
-    int bicepsCounter = 0;
-    int tricepsCounter = 0;
-    int shouldersCounter = 0;
-    int trapsCounter = 0;
-    int upperbackCounter = 0;
-    int lowerbackCounter = 0;
-    int chestCounter = 0;
-    int abdomenCounter = 0;
-    int glutesCounter = 0;
-    int hamstringsCounter = 0;
-    int quadricepsCounter = 0;
-    int calvesCounter = 0;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
+public class StatisticsHandler extends AppCompatActivity {
+    double bicepsCounter = 0;
+    double tricepsCounter = 0;
+    double shouldersCounter = 0;
+    double trapsCounter = 0;
+    double upperbackCounter = 0;
+    double lowerbackCounter = 0;
+    double chestCounter = 0;
+    double abdomenCounter = 0;
+    double glutesCounter = 0;
+    double hamstringsCounter = 0;
+    double quadricepsCounter = 0;
+    double calvesCounter = 0;
+
+
+    DbConnecter db = new DbConnecter();
+    public static final String PREFS_NAME = "shared_pref";
+    SharedPreferences pref;
+    List<WorkoutObject> nls;
 
 
 
@@ -37,6 +47,47 @@ public class StatisticsHandler extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics_handler);
 
+        pref = getApplicationContext().getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String userName = pref.getString("username", null);
+
+                ArrayList<WorkoutObject> ls = new ArrayList<>();
+                ls = db.getWorkOuts(userName);
+
+                nls = Collections.synchronizedList(new ArrayList<WorkoutObject>());
+                nls = ls;
+
+            }
+        });
+        thread1.start();
+
+        while (nls == null) {
+
+        } if (nls != null) {
+
+            for (int i = 0; i < nls.size(); i++) {
+
+                bicepsCounter = bicepsCounter + nls.get(i).getBiceps();
+                tricepsCounter = tricepsCounter + nls.get(i).getTriceps();
+                shouldersCounter = shouldersCounter + nls.get(i).getShoulders();
+                trapsCounter = trapsCounter + nls.get(i).getTraps();
+                upperbackCounter = upperbackCounter + nls.get(i).getUpperBack();
+                lowerbackCounter = lowerbackCounter + nls.get(i).getLowerBack();
+                chestCounter = chestCounter + nls.get(i).getChest();
+                abdomenCounter = abdomenCounter + nls.get(i).getAbdomen();
+                glutesCounter = glutesCounter + nls.get(i).getGlutes();
+                hamstringsCounter = hamstringsCounter + nls.get(i).getHamstrings();
+                quadricepsCounter = quadricepsCounter + nls.get(i).getQuadriceps();
+                calvesCounter = calvesCounter + nls.get(i).getCalves();
+
+            }
+
+
+        }
+
+
 
 
 
@@ -45,18 +96,18 @@ public class StatisticsHandler extends AppCompatActivity {
 
         GraphView graph = (GraphView) findViewById(R.id.graph);
         BarGraphSeries<DataPoint> series = new BarGraphSeries<DataPoint>(new DataPoint[] {
-                new DataPoint(0, 1),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(3, 2),
-                new DataPoint(4, 6),
-                new DataPoint(5, 10),
-                new DataPoint(6, 4),
-                new DataPoint(7, 18),
-                new DataPoint(8, 4),
-                new DataPoint(9, 12),
-                new DataPoint(10, 1),
-                new DataPoint(11, 2)
+                new DataPoint(0, bicepsCounter),
+                new DataPoint(1, tricepsCounter),
+                new DataPoint(2, shouldersCounter),
+                new DataPoint(3, trapsCounter),
+                new DataPoint(4, upperbackCounter),
+                new DataPoint(5, lowerbackCounter),
+                new DataPoint(6, chestCounter),
+                new DataPoint(7, abdomenCounter),
+                new DataPoint(8, glutesCounter),
+                new DataPoint(9, hamstringsCounter),
+                new DataPoint(10, quadricepsCounter),
+                new DataPoint(11, calvesCounter)
         });
         series.setSpacing(50);
         graph.getViewport().setXAxisBoundsManual(true);
