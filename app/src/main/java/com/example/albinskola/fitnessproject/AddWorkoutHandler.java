@@ -57,6 +57,8 @@ public class AddWorkoutHandler extends AppCompatActivity {
     int calves = 0;
     String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
     int successOrNah = 0;
+    double METvalue = 3.0; //value for heavy lifting when calculating burned calories per workout.
+    private ProfileObject po = null;
 
 
 
@@ -103,7 +105,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         tricepsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 triceps = 1;
-                tricepsButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
+                tricepsButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added triceps workout");
             }
         });
@@ -111,7 +113,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         shouldersButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 shoulders = 1;
-                shouldersButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
+                shouldersButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added shoulder workout");
             }
         });
@@ -119,7 +121,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         trapsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 traps = 1;
-                trapsButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
+                trapsButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added traps workout");
             }
         });
@@ -127,7 +129,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         upperbackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 upperback = 1;
-                upperbackButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
+                upperbackButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added upperback workout");
             }
         });
@@ -135,7 +137,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         lowerbackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 lowerback = 1;
-                lowerbackButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
+                lowerbackButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added lowerback workout");
             }
         });
@@ -143,7 +145,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         chestButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 chest = 1;
-                chestButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
+                chestButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added chest workout");
             }
         });
@@ -151,7 +153,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         abdomenButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 abdomen = 1;
-                abdomenButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
+                abdomenButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added abdomen workout");
             }
         });
@@ -159,7 +161,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         glutesButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 glutes = 1;
-                glutesButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
+                glutesButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added glutes workout");
             }
         });
@@ -167,7 +169,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         hamstringsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 hamstrings = 1;
-                hamstringsButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
+                hamstringsButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added hamstrings workout");
             }
         });
@@ -175,7 +177,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         quadricepsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 quadriceps = 1;
-                quadricepsButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
+                quadricepsButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added quadriceps workout");
             }
         });
@@ -183,7 +185,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         calvesButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 calves = 1;
-                calvesButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
+                calvesButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added calves workout");
             }
         });
@@ -195,14 +197,15 @@ public class AddWorkoutHandler extends AppCompatActivity {
                 if (elapsedTimeText.getText().toString().length() < 1 || intensityText.getText().toString().length() < 1) {
                     System.out.println("SPECIFY WORKOUT LENGTH AND INTENSITY");
                     Toast.makeText(getApplicationContext(), "please specify time and intensity of workout", Toast.LENGTH_SHORT).show();
-                }
-
-                else if(biceps == 0 && triceps == 0 && shoulders == 0 && traps == 0 && upperback == 0 && lowerback == 0 && chest == 0 && abdomen == 0 && glutes == 0 && hamstrings == 0 && quadriceps == 0 && calves == 0) {
+                } else if (biceps == 0 && triceps == 0 && shoulders == 0 && traps == 0 && upperback == 0 && lowerback == 0 && chest == 0 && abdomen == 0 && glutes == 0 && hamstrings == 0 && quadriceps == 0 && calves == 0) {
                     System.out.println("YOU HAVE TO ADD A BODY PART");
                     Toast.makeText(getApplicationContext(), "please add body part", Toast.LENGTH_SHORT).show();
 
 
                 } else {
+
+
+
 
 
                     System.out.println("Submitted total workout!!!!!!!" + date);
@@ -214,6 +217,10 @@ public class AddWorkoutHandler extends AppCompatActivity {
                             note = noteText.getText().toString();
                             elapsedTime = Integer.parseInt(elapsedTimeText.getText().toString());
                             intensity = Integer.parseInt(intensityText.getText().toString());
+                            double kcal = burnedCalories();
+
+                            System.out.println("JAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA " + kcal);
+
 
 
                             successOrNah = db.addWorkOut(userName, date, elapsedTime, intensity, note, biceps, triceps, shoulders, traps, upperback, lowerback, chest, abdomen, glutes, hamstrings, quadriceps, calves);
@@ -242,6 +249,8 @@ public class AddWorkoutHandler extends AppCompatActivity {
 
 
                 }
+
+
                 clearWorkoutButtons();
 
             }
@@ -285,6 +294,46 @@ public class AddWorkoutHandler extends AppCompatActivity {
         intensityText.setText("");
         noteText.setText("");
     }
+
+    private double burnedCalories(){
+
+        double tempCalories = 0;
+        double calories = 0;
+
+        pref = getApplicationContext().getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+
+                String username = pref.getString("username", null);
+                po = db.getProfile(username);
+
+
+            int w = po.getWeight();
+            //int h = po.getHeight();
+
+            double weight = (double)w;
+            //double height = (double)h;
+
+            double elapsedTime = Double.parseDouble(elapsedTimeText.getText().toString()) / 60;
+            double intensity = Double.parseDouble(intensityText.getText().toString()) / 100;
+
+            tempCalories = (METvalue * weight) * elapsedTime;
+            calories = tempCalories * intensity;
+
+
+
+        return calories;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
