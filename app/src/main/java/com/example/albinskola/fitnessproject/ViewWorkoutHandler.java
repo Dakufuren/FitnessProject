@@ -47,7 +47,7 @@ public class ViewWorkoutHandler extends AppCompatActivity {
             public void run() {
                 String userName = pref.getString("username", null);
 
-                ArrayList<WorkoutObject> ls = new ArrayList<>();
+                ArrayList<WorkoutObject> ls;
                 ls = db.getWorkOuts(userName);
 
                 nls = Collections.synchronizedList(new ArrayList<WorkoutObject>());

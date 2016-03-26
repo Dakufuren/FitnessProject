@@ -26,7 +26,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/UsernameField"
-        android:text="albin"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/LastnameField"
         android:layout_alignEnd="@+id/LastnameField"
@@ -38,7 +37,6 @@
         android:id="@+id/FirstnameField"
         android:layout_below="@+id/UsernameField"
         android:layout_centerHorizontal="true"
-        android:text="albin"
         android:singleLine="true" />
 
     <EditText
@@ -47,7 +45,6 @@
         android:id="@+id/LastnameField"
         android:layout_below="@+id/FirstnameField"
         android:layout_centerHorizontal="true"
-        android:text="åberg"
         android:singleLine="true" />
 
     <EditText
@@ -56,8 +53,8 @@
         android:id="@+id/PasswordField"
         android:layout_below="@+id/LastnameField"
         android:layout_centerHorizontal="true"
-        android:text="albin"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:password="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -65,7 +62,6 @@
         android:id="@+id/EmailField"
         android:layout_below="@+id/PasswordField"
         android:layout_centerHorizontal="true"
-        android:text="albin@hotmail.com"
         android:singleLine="true" />
 
     <EditText
@@ -74,7 +70,6 @@
         android:id="@+id/WeightField"
         android:layout_below="@+id/EmailField"
         android:layout_centerHorizontal="true"
-        android:text="83"
         android:singleLine="true" />
 
     <EditText
@@ -83,7 +78,6 @@
         android:id="@+id/HeightField"
         android:layout_below="@+id/WeightField"
         android:layout_centerHorizontal="true"
-        android:text="180"
         android:singleLine="true" />
 
     <EditText
@@ -92,7 +86,6 @@
         android:id="@+id/SexField"
         android:layout_below="@+id/HeightField"
         android:layout_centerHorizontal="true"
-        android:text="male"
         android:singleLine="true" />
 
 </RelativeLayout>
