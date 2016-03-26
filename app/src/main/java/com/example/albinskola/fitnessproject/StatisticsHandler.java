@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.LegendRenderer;
@@ -20,6 +21,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class StatisticsHandler extends AppCompatActivity {
+    private TextView displayAmountOfWorkouts;
+
     double bicepsCounter = 0;
     double tricepsCounter = 0;
     double shouldersCounter = 0;
@@ -38,6 +41,7 @@ public class StatisticsHandler extends AppCompatActivity {
     public static final String PREFS_NAME = "shared_pref";
     SharedPreferences pref;
     List<WorkoutObject> nls;
+    ArrayList<WorkoutObject> ls = new ArrayList<>();
 
 
 
@@ -47,14 +51,17 @@ public class StatisticsHandler extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics_handler);
 
+        displayAmountOfWorkouts = (TextView) findViewById(R.id.DisplayWorkoutAmount);
+
         pref = getApplicationContext().getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         Thread thread1 = new Thread(new Runnable() {
             @Override
             public void run() {
                 String userName = pref.getString("username", null);
 
-                ArrayList<WorkoutObject> ls = new ArrayList<>();
+                //ArrayList<WorkoutObject> ls = new ArrayList<>();
                 ls = db.getWorkOuts(userName);
+
 
                 nls = Collections.synchronizedList(new ArrayList<WorkoutObject>());
                 nls = ls;
@@ -65,27 +72,31 @@ public class StatisticsHandler extends AppCompatActivity {
 
         while (nls == null) {
 
-        } if (nls != null) {
+        }
+        thread1.interrupt();
+        System.out.println(nls.size());
+        for (int i = 0; i < nls.size(); i++) {
 
-            for (int i = 0; i < nls.size(); i++) {
-
-                bicepsCounter = bicepsCounter + nls.get(i).getBiceps();
-                tricepsCounter = tricepsCounter + nls.get(i).getTriceps();
-                shouldersCounter = shouldersCounter + nls.get(i).getShoulders();
-                trapsCounter = trapsCounter + nls.get(i).getTraps();
-                upperbackCounter = upperbackCounter + nls.get(i).getUpperBack();
-                lowerbackCounter = lowerbackCounter + nls.get(i).getLowerBack();
-                chestCounter = chestCounter + nls.get(i).getChest();
-                abdomenCounter = abdomenCounter + nls.get(i).getAbdomen();
-                glutesCounter = glutesCounter + nls.get(i).getGlutes();
-                hamstringsCounter = hamstringsCounter + nls.get(i).getHamstrings();
-                quadricepsCounter = quadricepsCounter + nls.get(i).getQuadriceps();
-                calvesCounter = calvesCounter + nls.get(i).getCalves();
-
-            }
+            bicepsCounter = bicepsCounter + nls.get(i).getBiceps();
+            tricepsCounter = tricepsCounter + nls.get(i).getTriceps();
+            shouldersCounter = shouldersCounter + nls.get(i).getShoulders();
+            trapsCounter = trapsCounter + nls.get(i).getTraps();
+            upperbackCounter = upperbackCounter + nls.get(i).getUpperBack();
+            lowerbackCounter = lowerbackCounter + nls.get(i).getLowerBack();
+            chestCounter = chestCounter + nls.get(i).getChest();
+            abdomenCounter = abdomenCounter + nls.get(i).getAbdomen();
+            glutesCounter = glutesCounter + nls.get(i).getGlutes();
+            hamstringsCounter = hamstringsCounter + nls.get(i).getHamstrings();
+            quadricepsCounter = quadricepsCounter + nls.get(i).getQuadriceps();
+            calvesCounter = calvesCounter + nls.get(i).getCalves();
 
 
         }
+
+        displayAmountOfWorkouts.setText("" + nls.size());
+
+
+
 
 
 
@@ -113,6 +124,9 @@ public class StatisticsHandler extends AppCompatActivity {
         graph.getViewport().setXAxisBoundsManual(true);
         graph.getViewport().setMaxX(11);
         graph.getLegendRenderer().setVisible(true);
+        graph.getViewport().setYAxisBoundsManual(true);
+        graph.getViewport().setMinY(0);
+        graph.getViewport().setMaxY(nls.size());
 
         graph.getGridLabelRenderer().setHorizontalLabelsVisible(false);
         graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
@@ -123,6 +137,8 @@ public class StatisticsHandler extends AppCompatActivity {
         StaticLabelsFormatter staticLabelsFormatter = new StaticLabelsFormatter(graph);
         staticLabelsFormatter.setHorizontalLabels(new String[]{"biceps", "triceps", "shoudlers", "traps", "upper Back", "lower back", "chest", "abdomen", "glutes", "hamstrings", "quadriceps", "calves"});
         graph.getGridLabelRenderer().setLabelFormatter(staticLabelsFormatter);*/
+
+
 
     }
 
