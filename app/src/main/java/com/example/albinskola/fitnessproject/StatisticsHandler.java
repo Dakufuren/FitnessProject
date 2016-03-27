@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.LegendRenderer;
+import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
@@ -22,6 +23,8 @@ import java.util.List;
 
 public class StatisticsHandler extends AppCompatActivity {
     private TextView displayAmountOfWorkouts;
+    private TextView displayTotalKcal;
+    private TextView displayAverageKcal;
 
     double bicepsCounter = 0;
     double tricepsCounter = 0;
@@ -35,6 +38,20 @@ public class StatisticsHandler extends AppCompatActivity {
     double hamstringsCounter = 0;
     double quadricepsCounter = 0;
     double calvesCounter = 0;
+    double totalKcal = 0;
+
+    int janCounter = 0;
+    int febCounter = 0;
+    int marCounter = 0;
+    int aprCounter = 0;
+    int mayCouner = 0;
+    int junCounter = 0;
+    int julCounter = 0;
+    int augCounter = 0;
+    int sepCounter = 0;
+    int octCounter = 0;
+    int novCounter = 0;
+    int decCounter = 0;
 
 
     DbConnecter db = new DbConnecter();
@@ -52,6 +69,8 @@ public class StatisticsHandler extends AppCompatActivity {
         setContentView(R.layout.activity_statistics_handler);
 
         displayAmountOfWorkouts = (TextView) findViewById(R.id.DisplayWorkoutAmount);
+        displayTotalKcal = (TextView) findViewById(R.id.DisplayTotalCalories);
+        displayAverageKcal = (TextView) findViewById(R.id.DisplayAverageCalories);
 
         pref = getApplicationContext().getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         Thread thread1 = new Thread(new Runnable() {
@@ -89,17 +108,38 @@ public class StatisticsHandler extends AppCompatActivity {
             hamstringsCounter = hamstringsCounter + nls.get(i).getHamstrings();
             quadricepsCounter = quadricepsCounter + nls.get(i).getQuadriceps();
             calvesCounter = calvesCounter + nls.get(i).getCalves();
+            totalKcal = totalKcal + nls.get(i).getKcal();
 
 
         }
 
         displayAmountOfWorkouts.setText("" + nls.size());
+        String tKcalFormatted = String.format("%.0f", totalKcal);
+        displayTotalKcal.setText(tKcalFormatted);
+        double averageKcal = totalKcal/nls.size();
+        String aKcalFormatted = String.format("%.0f", averageKcal);
+        displayAverageKcal.setText(aKcalFormatted);
 
 
 
 
+        GraphView monthgraph = (GraphView) findViewById(R.id.monthGraph);
+        LineGraphSeries<DataPoint> monthSeries = new LineGraphSeries<DataPoint>(new DataPoint[] {
+                new DataPoint(0, janCounter),
+                new DataPoint(1, febCounter),
+                new DataPoint(2, marCounter),
+                new DataPoint(3, aprCounter),
+                new DataPoint(4, mayCouner),
+                new DataPoint(5, junCounter),
+                new DataPoint(6, julCounter),
+                new DataPoint(7, augCounter),
+                new DataPoint(8, sepCounter),
+                new DataPoint(9, octCounter),
+                new DataPoint(10, novCounter),
+                new DataPoint(11, decCounter)
 
 
+        });
 
 
 
@@ -123,7 +163,7 @@ public class StatisticsHandler extends AppCompatActivity {
         series.setSpacing(50);
         graph.getViewport().setXAxisBoundsManual(true);
         graph.getViewport().setMaxX(11);
-        graph.getLegendRenderer().setVisible(true);
+       // graph.getLegendRenderer().setVisible(true);
         graph.getViewport().setYAxisBoundsManual(true);
         graph.getViewport().setMinY(0);
         graph.getViewport().setMaxY(nls.size());

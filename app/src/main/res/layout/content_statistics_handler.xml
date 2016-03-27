@@ -1,44 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.albinskola.fitnessproject.StatisticsHandler"
-    tools:showIn="@layout/activity_statistics_handler">
+    android:fillViewport="true"
+    android:scrollbars="none" >
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentTop="true">
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="714dp"
+            >
 
     <com.jjoe64.graphview.GraphView
         android:layout_width="match_parent"
         android:layout_height="200dip"
         android:id="@+id/graph"
 
-        android:layout_marginBottom="79dp"
-        android:layout_alignBottom="@+id/scrollView"
+        android:layout_marginBottom="73dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+            <com.jjoe64.graphview.GraphView
+                android:layout_width="match_parent"
+                android:layout_height="200dip"
+                android:id="@+id/monthGraph"
+
+                android:layout_marginBottom="73dp"
+                android:layout_above="@+id/graph"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/DisplayWorkoutAmount"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/scrollView"
-        android:layout_toEndOf="@+id/scrollView"
-        android:layout_marginLeft="300dp"
+        android:layout_toRightOf="@+id/ScrollView"
+        android:layout_toEndOf="@+id/ScrollView"
+        android:layout_marginLeft="283dp"
         android:layout_marginTop="50dp" />
 
     <TextView
@@ -70,7 +74,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="300dp"
+        android:layout_marginLeft="283dp"
         android:layout_marginTop="75dp"
         android:layout_alignBottom="@+id/textView9" />
 
@@ -92,7 +96,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="300dp"
+        android:layout_marginLeft="283dp"
         android:layout_marginTop="100dp" />
 
-</RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
