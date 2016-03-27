@@ -18,7 +18,9 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 public class StatisticsHandler extends AppCompatActivity {
@@ -110,6 +112,36 @@ public class StatisticsHandler extends AppCompatActivity {
             calvesCounter = calvesCounter + nls.get(i).getCalves();
             totalKcal = totalKcal + nls.get(i).getKcal();
 
+            Date tmpDate = nls.get(i). getDate();
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(tmpDate);
+            int month = cal.get(Calendar.MONTH);
+            if (month == 0) {
+                janCounter++;
+            } else if (month == 1) {
+                febCounter++;
+            }else if (month == 2) {
+                marCounter++;
+            }else if (month == 3) {
+                aprCounter++;
+            }else if (month == 4) {
+                mayCouner++;
+            }else if (month == 5) {
+                junCounter++;
+            }else if (month == 6) {
+                julCounter++;
+            }else if (month == 7) {
+                augCounter++;
+            }else if (month == 8) {
+                sepCounter++;
+            }else if (month == 9) {
+                octCounter++;
+            }else if (month == 10) {
+                novCounter++;
+            }else if (month == 11) {
+                decCounter++;
+            }
+
 
         }
 
@@ -141,6 +173,18 @@ public class StatisticsHandler extends AppCompatActivity {
 
         });
 
+
+        monthgraph.getViewport().setXAxisBoundsManual(true);
+        monthgraph.getViewport().setMaxX(11);
+        // graph.getLegendRenderer().setVisible(true);
+        monthgraph.getViewport().setYAxisBoundsManual(true);
+        monthgraph.getViewport().setMinY(0);
+        monthgraph.getViewport().setMaxY(nls.size());
+
+        monthgraph.getGridLabelRenderer().setHorizontalLabelsVisible(false);
+        monthgraph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+
+        monthgraph.addSeries(monthSeries);
 
 
 
