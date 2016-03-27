@@ -10,155 +10,135 @@
     tools:context="com.example.albinskola.fitnessproject.AddWorkoutHandler">
 
     <EditText
-        android:layout_width="150px"
-        android:layout_height="wrap_content"
-        android:inputType="time"
-        android:ems="10"
-        android:id="@+id/editTextElapsed"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="150px"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editTextIntentsity"
-        android:layout_below="@+id/editTextElapsed"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="22dp" />
-
-    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
+        android:hint="enter notes here"
         android:ems="10"
         android:id="@+id/editTextNote"
-        android:layout_below="@+id/editTextIntentsity"
+        android:layout_marginTop="38dp"
+        android:layout_below="@+id/seekBarIntensity"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="22dp" />
+        android:layout_alignParentStart="true" />
 
     <Button
-        android:layout_width="150px"
-        android:layout_height="100px"
+        android:layout_width="250px"
+        android:layout_height="150px"
         android:text="bic"
         android:id="@+id/buttonBiceps"
         android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignLeft="@+id/buttonTriceps"
+        android:layout_alignStart="@+id/buttonTriceps" />
 
     <Button
-        android:layout_width="150px"
-        android:layout_height="100px"
+        android:layout_width="250px"
+        android:layout_height="150px"
         android:text="tric"
         android:id="@+id/buttonTriceps"
         android:layout_below="@+id/buttonBiceps"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignLeft="@+id/buttonShoulders"
+        android:layout_alignStart="@+id/buttonShoulders" />
 
     <Button
-        android:layout_width="150px"
-        android:layout_height="100px"
+        android:layout_width="250px"
+        android:layout_height="150px"
         android:text="shou"
         android:id="@+id/buttonShoulders"
-        android:layout_below="@+id/buttonTriceps"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/buttonChest"
+        android:layout_alignLeft="@+id/buttonTraps"
+        android:layout_alignStart="@+id/buttonTraps" />
 
     <Button
-        android:layout_width="150px"
-        android:layout_height="100px"
+        android:layout_width="250px"
+        android:layout_height="150px"
         android:text="traps"
         android:id="@+id/buttonTraps"
-        android:layout_below="@+id/buttonShoulders"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignTop="@+id/buttonChest"
+        android:layout_alignLeft="@+id/editTextNote"
+        android:layout_alignStart="@+id/editTextNote" />
 
     <Button
-        android:layout_width="150px"
-        android:layout_height="100px"
+        android:layout_width="250px"
+        android:layout_height="150px"
         android:text="U back"
         android:id="@+id/buttonUback"
-        android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/editTextNote"
-        android:layout_alignEnd="@+id/editTextNote" />
+        android:layout_alignTop="@+id/buttonBiceps"
+        android:layout_centerHorizontal="true" />
 
     <Button
-        android:layout_width="150px"
-        android:layout_height="100px"
+        android:layout_width="250px"
+        android:layout_height="150px"
         android:text="L back"
         android:id="@+id/buttonLback"
-        android:layout_above="@+id/buttonShoulders"
-        android:layout_alignRight="@+id/buttonUback"
-        android:layout_alignEnd="@+id/buttonUback" />
+        android:layout_alignTop="@+id/buttonTriceps"
+        android:layout_alignLeft="@+id/buttonUback"
+        android:layout_alignStart="@+id/buttonUback" />
 
     <Button
-        android:layout_width="150px"
-        android:layout_height="100px"
+        android:layout_width="250px"
+        android:layout_height="150px"
         android:text="Chest"
         android:id="@+id/buttonChest"
-        android:layout_below="@+id/buttonLback"
-        android:layout_alignRight="@+id/buttonLback"
-        android:layout_alignEnd="@+id/buttonLback" />
+        android:layout_below="@+id/buttonAbd"
+        android:layout_alignLeft="@+id/buttonLback"
+        android:layout_alignStart="@+id/buttonLback" />
 
     <Button
-        android:layout_width="150px"
-        android:layout_height="100px"
+        android:layout_width="250px"
+        android:layout_height="150px"
         android:text="Abd"
         android:id="@+id/buttonAbd"
-        android:layout_alignBottom="@+id/buttonTraps"
-        android:layout_alignRight="@+id/buttonChest"
-        android:layout_alignEnd="@+id/buttonChest" />
+        android:layout_below="@+id/buttonLback"
+        android:layout_alignLeft="@+id/buttonLback"
+        android:layout_alignStart="@+id/buttonLback" />
 
     <Button
-        android:layout_width="150px"
-        android:layout_height="100px"
+        android:layout_width="250px"
+        android:layout_height="150px"
         android:text="Glutes"
         android:id="@+id/buttonGlutes"
-        android:layout_alignTop="@+id/buttonUback"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignTop="@+id/buttonBiceps"
+        android:layout_alignRight="@+id/textView12"
+        android:layout_alignEnd="@+id/textView12" />
 
     <Button
-        android:layout_width="150px"
-        android:layout_height="100px"
+        android:layout_width="250px"
+        android:layout_height="150px"
         android:text="Hamst"
         android:id="@+id/buttonHamstrings"
-        android:layout_below="@+id/buttonGlutes"
+        android:layout_alignTop="@+id/buttonChest"
+        android:layout_alignLeft="@+id/buttonCalves"
+        android:layout_alignStart="@+id/buttonCalves" />
+
+    <Button
+        android:layout_width="250px"
+        android:layout_height="150px"
+        android:text="Quad"
+        android:id="@+id/buttonQuad"
+        android:layout_above="@+id/buttonChest"
+        android:layout_alignRight="@+id/buttonAddWorkout"
+        android:layout_alignEnd="@+id/buttonAddWorkout" />
+
+    <Button
+        android:layout_width="250px"
+        android:layout_height="150px"
+        android:text="Calv"
+        android:id="@+id/buttonCalves"
+        android:layout_alignTop="@+id/buttonLback"
         android:layout_alignLeft="@+id/buttonGlutes"
         android:layout_alignStart="@+id/buttonGlutes" />
 
     <Button
-        android:layout_width="150px"
-        android:layout_height="100px"
-        android:text="Quad"
-        android:id="@+id/buttonQuad"
-        android:layout_below="@+id/buttonHamstrings"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:layout_width="150px"
-        android:layout_height="100px"
-        android:text="Calv"
-        android:id="@+id/buttonCalves"
-        android:layout_below="@+id/buttonQuad"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300px"
+        android:layout_height="200px"
         android:text="Add workout"
         android:id="@+id/buttonAddWorkout"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/buttonAbd"
-        android:layout_alignStart="@+id/buttonAbd" />
+        android:layout_alignRight="@+id/buttonHamstrings"
+        android:layout_alignEnd="@+id/buttonHamstrings"
+        android:layout_toEndOf="@+id/editTextNote"
+        android:layout_alignLeft="@+id/buttonTraps"
+        android:layout_alignStart="@+id/buttonTraps" />
 
     <SeekBar
         android:layout_width="wrap_content"
@@ -167,10 +147,11 @@
         android:indeterminate="false"
         android:max="120"
         android:progress="0"
-        android:layout_alignBottom="@+id/editTextElapsed"
-        android:layout_toRightOf="@+id/editTextElapsed"
-        android:layout_alignRight="@+id/buttonUback"
-        android:layout_alignEnd="@+id/buttonUback" />
+        android:layout_alignTop="@+id/textView11"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/textView11"
+        android:layout_toStartOf="@+id/textView11" />
 
     <SeekBar
         android:layout_width="wrap_content"
@@ -179,26 +160,28 @@
         android:indeterminate="false"
         android:max="100"
         android:progress="0"
-        android:layout_below="@+id/editTextIntentsity"
-        android:layout_toRightOf="@+id/editTextIntentsity"
-        android:layout_alignRight="@+id/buttonUback"
-        android:layout_alignEnd="@+id/buttonUback" />
+        android:layout_below="@+id/textView11"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="26dp"
+        android:layout_toStartOf="@+id/textView12"
+        android:layout_alignRight="@+id/seekBarTime"
+        android:layout_alignEnd="@+id/seekBarTime" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView11"
-        android:layout_above="@+id/editTextIntentsity"
-        android:layout_toRightOf="@+id/buttonUback"
-        android:layout_alignRight="@+id/buttonGlutes"
-        android:layout_alignEnd="@+id/buttonGlutes" />
+        android:layout_toRightOf="@+id/editTextNote"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView12"
-        android:layout_alignTop="@+id/seekBarIntensity"
-        android:layout_toRightOf="@+id/seekBarIntensity"
+        android:layout_alignBottom="@+id/seekBarIntensity"
+        android:layout_toRightOf="@+id/editTextNote"
         android:layout_alignRight="@+id/textView11"
         android:layout_alignEnd="@+id/textView11" />
 </RelativeLayout>

@@ -83,8 +83,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         pref = getApplicationContext().getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 
 
-        elapsedTimeText = (EditText)findViewById(R.id.editTextElapsed);
-        intensityText = (EditText)findViewById(R.id.editTextIntentsity);
+
         noteText = (EditText)findViewById(R.id.editTextNote);
         bicepsButton = (Button)findViewById(R.id.buttonBiceps);
         tricepsButton = (Button)findViewById(R.id.buttonTriceps);
@@ -354,8 +353,6 @@ public class AddWorkoutHandler extends AppCompatActivity {
     }
 
     private void clearTextFields(){
-        elapsedTimeText.setText("");
-        intensityText.setText("");
         noteText.setText("");
     }
 
