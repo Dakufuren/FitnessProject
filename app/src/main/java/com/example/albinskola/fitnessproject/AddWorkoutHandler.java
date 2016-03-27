@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DateFormat;
@@ -38,6 +40,10 @@ public class AddWorkoutHandler extends AppCompatActivity {
     private Button quadricepsButton;
     private Button calvesButton;
     private Button submitButton;
+    private SeekBar elapsedTimeSeekBar;
+    private SeekBar intensitySeekBar;
+    private TextView progressTimeTextView;
+    private TextView progressIntensityTextView;
 
 
     int elapsedTime = 0;
@@ -59,6 +65,9 @@ public class AddWorkoutHandler extends AppCompatActivity {
     int successOrNah = 0;
     double METvalue = 3.0; //value for heavy lifting when calculating burned calories per workout.
     private ProfileObject po = null;
+    int progress = 0;
+    int progress2 = 0;
+    int offset = 10;
 
 
 
@@ -90,6 +99,61 @@ public class AddWorkoutHandler extends AppCompatActivity {
         quadricepsButton = (Button)findViewById(R.id.buttonQuad);
         calvesButton = (Button)findViewById(R.id.buttonCalves);
         submitButton = (Button)findViewById(R.id.buttonAddWorkout);
+        elapsedTimeSeekBar = (SeekBar)findViewById(R.id.seekBarTime);
+        intensitySeekBar = (SeekBar)findViewById(R.id.seekBarIntensity);
+        progressTimeTextView = (TextView)findViewById(R.id.textView11);
+        progressIntensityTextView = (TextView)findViewById(R.id.textView12);
+
+
+
+        progressTimeTextView.setText("total time: " + elapsedTimeSeekBar.getProgress());
+        progressIntensityTextView.setText("intensity: " + intensitySeekBar.getProgress());
+
+
+
+        elapsedTimeSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+
+            @Override
+            public void onProgressChanged(SeekBar elapsedTimeSeekBar, int progresValue, boolean fromUser) {
+                progress = progresValue;
+
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar elapsedTimeSeekBar) {
+                progressTimeTextView.setText("total time: " + progress);
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar elapsedTimeSeekBar) {
+                progressTimeTextView.setText("total time: " + progress);
+            }
+        });
+
+        intensitySeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+
+            @Override
+            public void onProgressChanged(SeekBar intensitySeekBar, int progresValue, boolean fromUser) {
+                progress2 = progresValue;
+
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar intensitySeekBar) {
+                progressIntensityTextView.setText("Intensity: " + progress2);
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar intensitySeekBar) {
+                progressIntensityTextView.setText("Intensity: " + progress2);
+            }
+        });
+
 
 
         bicepsButton.setOnClickListener(new View.OnClickListener() {
@@ -194,7 +258,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                if (elapsedTimeText.getText().toString().length() < 1 || intensityText.getText().toString().length() < 1) {
+                if ( elapsedTimeSeekBar.getProgress() == 0 || elapsedTimeSeekBar.getProgress() == 0) {
                     System.out.println("SPECIFY WORKOUT LENGTH AND INTENSITY");
                     Toast.makeText(getApplicationContext(), "please specify time and intensity of workout", Toast.LENGTH_SHORT).show();
                 } else if (biceps == 0 && triceps == 0 && shoulders == 0 && traps == 0 && upperback == 0 && lowerback == 0 && chest == 0 && abdomen == 0 && glutes == 0 && hamstrings == 0 && quadriceps == 0 && calves == 0) {
@@ -215,8 +279,8 @@ public class AddWorkoutHandler extends AppCompatActivity {
                         public void run() {
                             String userName = pref.getString("username", null);
                             note = noteText.getText().toString();
-                            elapsedTime = Integer.parseInt(elapsedTimeText.getText().toString());
-                            intensity = Integer.parseInt(intensityText.getText().toString());
+                            elapsedTime = elapsedTimeSeekBar.getProgress();
+                            intensity = intensitySeekBar.getProgress();
                             double kcal = burnedCalories();
 
                             System.out.println("JAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA " + kcal);
@@ -312,8 +376,8 @@ public class AddWorkoutHandler extends AppCompatActivity {
             double weight = (double)w;
             //double height = (double)h;
 
-            double elapsedTime = Double.parseDouble(elapsedTimeText.getText().toString()) / 60;
-            double intensity = Double.parseDouble(intensityText.getText().toString()) / 100;
+            double elapsedTime = Double.parseDouble(String.valueOf(progress)) / 60;
+            double intensity = Double.parseDouble(String.valueOf(progress2)) / 100;
 
             tempCalories = (METvalue * weight) * elapsedTime;
             calories = tempCalories * intensity;

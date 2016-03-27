@@ -171,4 +171,46 @@
         android:layout_alignParentEnd="true"
         android:layout_alignLeft="@+id/buttonAbd"
         android:layout_alignStart="@+id/buttonAbd" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBarTime"
+        android:indeterminate="false"
+        android:max="120"
+        android:progress="0"
+        android:layout_alignBottom="@+id/editTextElapsed"
+        android:layout_toRightOf="@+id/editTextElapsed"
+        android:layout_alignRight="@+id/buttonUback"
+        android:layout_alignEnd="@+id/buttonUback" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBarIntensity"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="0"
+        android:layout_below="@+id/editTextIntentsity"
+        android:layout_toRightOf="@+id/editTextIntentsity"
+        android:layout_alignRight="@+id/buttonUback"
+        android:layout_alignEnd="@+id/buttonUback" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView11"
+        android:layout_above="@+id/editTextIntentsity"
+        android:layout_toRightOf="@+id/buttonUback"
+        android:layout_alignRight="@+id/buttonGlutes"
+        android:layout_alignEnd="@+id/buttonGlutes" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView12"
+        android:layout_alignTop="@+id/seekBarIntensity"
+        android:layout_toRightOf="@+id/seekBarIntensity"
+        android:layout_alignRight="@+id/textView11"
+        android:layout_alignEnd="@+id/textView11" />
 </RelativeLayout>
