@@ -83,11 +83,8 @@ public class MainMenuHandler extends AppCompatActivity {
 
     public void onClickTips(View v){
         System.out.println("Tips Clicked!!!");
-        /*
-        Intent intent = new Intent(MainMenuHandler.this,
+        Intent intent = new Intent(MainMenuHandler.this, TipsHandler.class);
         startActivity(intent);
-        */
-
     }
 
     public void onClickLeftover(View v){

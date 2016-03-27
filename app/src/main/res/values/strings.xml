@@ -1,9 +1,11 @@
 <resources>
-    <string name="app_name">FitnessProject</string>
-    <string name="title_activity_login_handler">LoginHandler</string>
-    <string name="title_activity_main_menu_handler">MainMenuHandler</string>
+    <string name="app_name">Fitness+</string>
+    <string name="title_activity_login_handler">Login</string>
+    <string name="title_activity_main_menu_handler">Main Menu</string>
     <string name="title_activity_db_connecter">DbConnecter</string>
-    <string name="title_activity_signup_handler">SignupHandler</string>
-    <string name="title_activity_view_workout_handler">ViewWorkoutHandler</string>
-    <string name="title_activity_statistics_handler">StatisticsHandler</string>
+    <string name="title_activity_signup_handler">Create Account</string>
+    <string name="title_activity_view_workout_handler">View Workout</string>
+    <string name="title_activity_statistics_handler">Statistics</string>
+    <string name="title_activity_profile_handler">Profile</string>
+    <string name="title_activity_tips_handler">Tips</string>
 </resources>

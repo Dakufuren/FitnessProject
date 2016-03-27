@@ -20,12 +20,10 @@
         </activity>
         <activity
             android:name=".LoginHandler"
-            android:label="@string/title_activity_login_handler"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_login_handler" />
         <activity
             android:name=".MainMenuHandler"
-            android:label="@string/title_activity_main_menu_handler"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_main_menu_handler" />
         <activity
             android:name=".AddWorkoutHandler"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -33,12 +31,18 @@
             android:name=".SignupHandler"
             android:label="@string/title_activity_signup_handler"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ViewWorkoutHandler" />
-        <activity android:name=".ProfileHandler" />
+        <activity
+            android:name=".ViewWorkoutHandler"
+            android:label="@string/title_activity_view_workout_handler"/>
+        <activity
+            android:name=".ProfileHandler"
+            android:label="@string/title_activity_profile_handler"/>
         <activity
             android:name=".StatisticsHandler"
-            android:label="@string/title_activity_statistics_handler"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="@string/title_activity_statistics_handler" />
+        <activity
+            android:name=".TipsHandler"
+            android:label="@string/title_activity_tips_handler"/>
     </application>
 
 </manifest>
