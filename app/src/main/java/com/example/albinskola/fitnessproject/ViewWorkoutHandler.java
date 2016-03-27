@@ -105,7 +105,7 @@ public class ViewWorkoutHandler extends AppCompatActivity {
                     alertDialogBuilder
                             .setMessage(getDiaMsg())
                             .setCancelable(false)
-                            .setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
+                            .setNegativeButton("Done",new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog,int id) {
                                     // if this button is clicked, just close
                                     // the dialog box and do nothing
