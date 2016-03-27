@@ -99,6 +99,20 @@
         android:layout_marginLeft="283dp"
         android:layout_marginTop="100dp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct  Nov  Dec"
+                android:id="@+id/textView11"
+                android:layout_marginBottom="42dp"
+                android:layout_above="@+id/graph"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textSize="13dp" />
+
         </RelativeLayout>
     </LinearLayout>
 </ScrollView>
