@@ -24,9 +24,10 @@ public class WorkoutObject {
     int hamstrings = 0;
     int quadriceps = 0;
     int calves = 0;
+    double kcal = 0;
 
     public WorkoutObject(Date date, int elapsedTime, int intensity, String description, int biceps, int triceps, int shoulders, int traps,
-                   int upperBack, int lowerBack, int chest, int abdomen, int glutes, int hamstrings, int quadriceps, int calves) {
+                   int upperBack, int lowerBack, int chest, int abdomen, int glutes, int hamstrings, int quadriceps, int calves, double kcal) {
         this.date = date;
         this.elapsedTime = elapsedTime;
         this.intensity = intensity;
@@ -43,6 +44,7 @@ public class WorkoutObject {
         this.hamstrings = hamstrings;
         this.quadriceps = quadriceps;
         this.calves = calves;
+        this.kcal = kcal;
 
 
 
@@ -111,6 +113,8 @@ public class WorkoutObject {
     public int getQuadriceps() {
         return quadriceps;
     }
+
+    public double getKcal() { return kcal; }
 
 
 

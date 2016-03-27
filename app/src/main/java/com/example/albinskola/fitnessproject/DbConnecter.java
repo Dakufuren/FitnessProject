@@ -58,15 +58,15 @@ public class DbConnecter {
     }
 
     public int addWorkOut(String userName, String date, int elapsedTime, int intensity, String description, int biceps, int triceps, int shoulders, int traps,
-                           int upperBack, int lowerBack, int chest, int abdomen, int glutes, int hamstrings, int quadriceps, int calves) {
+                           int upperBack, int lowerBack, int chest, int abdomen, int glutes, int hamstrings, int quadriceps, int calves, double kcal) {
         int isAdded = 2;
         try {
             connect();
 
             Statement st = con.createStatement();
 
-            String sqlWorkout = String.format("INSERT INTO Workouts (Users_UserName, TheDate, ElapsedTime, Intensity, Note, Biceps, Triceps, Shoulders, Traps, UpperBack, LowerBack, Chest, Abdomen, Glutes, Hamstrings, Quadriceps, Calves) VALUES ('%s', '%s', %d, %d, '%s', %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d)", userName, date, elapsedTime, intensity, description, biceps, triceps, shoulders, traps,
-                    upperBack, lowerBack, chest, abdomen, glutes, hamstrings, quadriceps, calves);
+            String sqlWorkout = String.format("INSERT INTO Workouts (Users_UserName, TheDate, ElapsedTime, Intensity, Note, Biceps, Triceps, Shoulders, Traps, UpperBack, LowerBack, Chest, Abdomen, Glutes, Hamstrings, Quadriceps, Calves) VALUES ('%s', '%s', %d, %d, '%s', %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %f)", userName, date, elapsedTime, intensity, description, biceps, triceps, shoulders, traps,
+                    upperBack, lowerBack, chest, abdomen, glutes, hamstrings, quadriceps, calves, kcal);
 
             st.executeUpdate(sqlWorkout);
 
@@ -89,7 +89,7 @@ public class DbConnecter {
             ResultSet rs = st.executeQuery("SELECT * FROM Workouts WHERE Users_UserName = '" + userName + "'");
 
             while (rs.next()) {
-                wo = new WorkoutObject(rs.getDate("TheDate"), rs.getInt("ElapsedTime"), rs.getInt("Intensity"), rs.getString("Note"), rs.getInt("Biceps"), rs.getInt("Triceps"), rs.getInt("Shoulders"), rs.getInt("Traps"), rs.getInt("UpperBack"), rs.getInt("LowerBack"), rs.getInt("Chest"), rs.getInt("Abdomen"), rs.getInt("Glutes"), rs.getInt("Hamstrings"), rs.getByte("Quadriceps"), rs.getInt("Calves"));
+                wo = new WorkoutObject(rs.getDate("TheDate"), rs.getInt("ElapsedTime"), rs.getInt("Intensity"), rs.getString("Note"), rs.getInt("Biceps"), rs.getInt("Triceps"), rs.getInt("Shoulders"), rs.getInt("Traps"), rs.getInt("UpperBack"), rs.getInt("LowerBack"), rs.getInt("Chest"), rs.getInt("Abdomen"), rs.getInt("Glutes"), rs.getInt("Hamstrings"), rs.getByte("Quadriceps"), rs.getInt("Calves"), rs.getDouble("CaloriesBurned"));
                 workoutList.add(wo);
             }
         } catch (Exception ex) {
