@@ -131,7 +131,8 @@ public class ViewWorkoutHandler extends AppCompatActivity {
 
         diaMsg = "Elapsed time: " + nls.get(tempId).getElapsedTime();
         diaMsg = diaMsg + "\n" + "Intensity: " + nls.get(tempId).getIntensity();
-        diaMsg = diaMsg + "\n" + "Note: " + nls.get(tempId).getDescription() + "\n" + "\n";
+        diaMsg = diaMsg + "\n" + "Note: " + nls.get(tempId).getDescription();
+        diaMsg = diaMsg + "\n" + "Burned Calories: " + nls.get(tempId).getKcal() + "\n" + "\n";
 
         if(nls.get(tempId).getAbdomen() == 1){
             diaMsg = diaMsg + "Abdomen" + "\n";
