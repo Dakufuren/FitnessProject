@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.albinskola.fitnessproject.ProfileHandler">
+    tools:context="com.example.albinskola.fitnessproject.ProfileHandler"
+    android:id="@+id/qqqqqqq">
 
     <Button
         android:layout_width="wrap_content"
@@ -15,28 +16,46 @@
         android:text="Submit"
         android:id="@+id/SubmitButton"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp" />
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50px"
+        android:layout_height="150px"
         android:id="@+id/WeightField"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp" />
+        android:layout_marginTop="48dp"
+        android:layout_alignRight="@+id/SubmitButton"
+        android:layout_alignEnd="@+id/SubmitButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center"
+        android:singleLine="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/HeightField"
         android:layout_below="@+id/WeightField"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignRight="@+id/WeightField"
+        android:layout_alignEnd="@+id/WeightField"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center"
+        android:singleLine="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/SexField"
         android:layout_below="@+id/HeightField"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignRight="@+id/HeightField"
+        android:layout_alignEnd="@+id/HeightField"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center"
+        android:singleLine="true" />
 </RelativeLayout>
