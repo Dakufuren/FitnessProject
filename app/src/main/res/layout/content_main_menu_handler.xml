@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageAdd"
         android:src="@drawable/add"
-        android:layout_marginLeft="50px"
+        android:layout_marginLeft="110px"
         android:onClick="onClickAdd"
         android:background="#00ffffff" />
 
@@ -40,7 +40,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="50px"
+        android:layout_marginRight="110px"
         android:onClick="onClickView"
         android:background="#00ffffff" />
 
