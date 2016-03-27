@@ -134,32 +134,29 @@ public class ViewWorkoutHandler extends AppCompatActivity {
         diaMsg = diaMsg + "\n" + "Note: " + nls.get(tempId).getDescription();
         diaMsg = diaMsg + "\n" + "Burned Calories: " + nls.get(tempId).getKcal() + "\n" + "\n";
 
-        if(nls.get(tempId).getAbdomen() == 1){
-            diaMsg = diaMsg + "Abdomen" + "\n";
-        }
         if(nls.get(tempId).getBiceps() == 1){
             diaMsg = diaMsg + "Biceps" + "\n";
-        }
-        if(nls.get(tempId).getCalves() == 1){
-            diaMsg = diaMsg + "Calves"  + "\n";
-        }
-        if(nls.get(tempId).getChest() == 1){
-            diaMsg = diaMsg + "Chest" + "\n";
         }
         if(nls.get(tempId).getTriceps() == 1){
             diaMsg = diaMsg + "Triceps" + "\n";
         }
-        if(nls.get(tempId).getShoulders() == 1){
+        if(nls.get(tempId).getShoulders() == 1) {
             diaMsg = diaMsg + "Shoulders" + "\n";
         }
         if(nls.get(tempId).getTraps() == 1){
             diaMsg = diaMsg + "Traps" + "\n";
         }
-        if(nls.get(tempId).getUpperBack() == 1){
+        if(nls.get(tempId).getUpperBack() == 1) {
             diaMsg = diaMsg + "Upper Back" + "\n";
         }
-        if(nls.get(tempId).getLowerBack() == 1){
+        if(nls.get(tempId).getLowerBack() == 1) {
             diaMsg = diaMsg + "Lower Back" + "\n";
+        }
+        if(nls.get(tempId).getChest() == 1){
+            diaMsg = diaMsg + "Chest" + "\n";
+        }
+        if(nls.get(tempId).getAbdomen() == 1) {
+            diaMsg = diaMsg + "Abdomen" + "\n";
         }
         if(nls.get(tempId).getGlutes() == 1){
             diaMsg = diaMsg + "Glutes" + "\n";
@@ -170,6 +167,10 @@ public class ViewWorkoutHandler extends AppCompatActivity {
         if(nls.get(tempId).getQuadriceps() == 1){
             diaMsg = diaMsg + "Quadriceps" + "\n";
         }
+        if(nls.get(tempId).getCalves() == 1) {
+            diaMsg = diaMsg + "Calves"  + "\n";
+        }
+
         return diaMsg;
     }
 }
