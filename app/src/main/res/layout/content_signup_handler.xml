@@ -17,74 +17,116 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         android:id="@+id/SubmitButton"
+        android:layout_marginBottom="67dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="39dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/SexField"
+        android:layout_alignEnd="@+id/SexField" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/UsernameField"
+        android:hint="username"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/LastnameField"
-        android:layout_alignEnd="@+id/LastnameField"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/FirstnameField"
+        android:hint="firstname"
         android:layout_below="@+id/UsernameField"
-        android:layout_centerHorizontal="true"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:layout_alignRight="@+id/UsernameField"
+        android:layout_alignEnd="@+id/UsernameField"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/LastnameField"
         android:layout_below="@+id/FirstnameField"
-        android:layout_centerHorizontal="true"
-        android:singleLine="true" />
+        android:hint="lastname"
+        android:singleLine="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/PasswordField"
+        android:hint="password"
         android:layout_below="@+id/LastnameField"
-        android:layout_centerHorizontal="true"
         android:singleLine="true"
-        android:password="true" />
+        android:password="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/EmailField"
+        android:hint="email"
         android:layout_below="@+id/PasswordField"
-        android:layout_centerHorizontal="true"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:layout_alignRight="@+id/PasswordField"
+        android:layout_alignEnd="@+id/PasswordField"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/WeightField"
+        android:hint="weight"
         android:layout_below="@+id/EmailField"
-        android:layout_centerHorizontal="true"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:layout_alignRight="@+id/EmailField"
+        android:layout_alignEnd="@+id/EmailField"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/HeightField"
+        android:hint="height"
         android:layout_below="@+id/WeightField"
-        android:layout_centerHorizontal="true"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:layout_alignRight="@+id/WeightField"
+        android:layout_alignEnd="@+id/WeightField"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/SexField"
+        android:hint="gender"
         android:layout_below="@+id/HeightField"
-        android:layout_centerHorizontal="true"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:layout_alignRight="@+id/HeightField"
+        android:layout_alignEnd="@+id/HeightField"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
 
 </RelativeLayout>
