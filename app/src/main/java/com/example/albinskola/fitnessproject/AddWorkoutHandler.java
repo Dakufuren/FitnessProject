@@ -122,13 +122,13 @@ public class AddWorkoutHandler extends AppCompatActivity {
 
             @Override
             public void onStartTrackingTouch(SeekBar elapsedTimeSeekBar) {
-                progressTimeTextView.setText("total time: " + progress);
+                progressTimeTextView.setText("total time: " + progress + " min");
 
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar elapsedTimeSeekBar) {
-                progressTimeTextView.setText("total time: " + progress);
+                progressTimeTextView.setText("total time: " + progress + " min");
             }
         });
 
@@ -144,12 +144,12 @@ public class AddWorkoutHandler extends AppCompatActivity {
 
             @Override
             public void onStartTrackingTouch(SeekBar intensitySeekBar) {
-                progressIntensityTextView.setText("Intensity: " + progress2);
+                progressIntensityTextView.setText("Intensity: " + progress2 + " %");
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar intensitySeekBar) {
-                progressIntensityTextView.setText("Intensity: " + progress2);
+                progressIntensityTextView.setText("Intensity: " + progress2 + " %");
             }
         });
 
@@ -158,7 +158,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         bicepsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 biceps = 1;
-                bicepsButton.getBackground().setColorFilter(0xFFAA4400,PorterDuff.Mode.MULTIPLY);
+                bicepsButton.getBackground().setColorFilter(0xFF447183,PorterDuff.Mode.MULTIPLY);
                 System.out.println(biceps);
 
                 System.out.println("Added biceps workout");
@@ -168,7 +168,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         tricepsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 triceps = 1;
-                tricepsButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
+                tricepsButton.getBackground().setColorFilter(0xFF447183, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added triceps workout");
             }
         });
@@ -176,7 +176,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         shouldersButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 shoulders = 1;
-                shouldersButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
+                shouldersButton.getBackground().setColorFilter(0xFF447183, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added shoulder workout");
             }
         });
@@ -184,7 +184,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         trapsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 traps = 1;
-                trapsButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
+                trapsButton.getBackground().setColorFilter(0xFF447183, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added traps workout");
             }
         });
@@ -192,7 +192,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         upperbackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 upperback = 1;
-                upperbackButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
+                upperbackButton.getBackground().setColorFilter(0xFF447183, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added upperback workout");
             }
         });
@@ -200,7 +200,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         lowerbackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 lowerback = 1;
-                lowerbackButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
+                lowerbackButton.getBackground().setColorFilter(0xFF447183, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added lowerback workout");
             }
         });
@@ -208,7 +208,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         chestButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 chest = 1;
-                chestButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
+                chestButton.getBackground().setColorFilter(0xFF447183, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added chest workout");
             }
         });
@@ -216,7 +216,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         abdomenButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 abdomen = 1;
-                abdomenButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
+                abdomenButton.getBackground().setColorFilter(0xFF447183, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added abdomen workout");
             }
         });
@@ -224,7 +224,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         glutesButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 glutes = 1;
-                glutesButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
+                glutesButton.getBackground().setColorFilter(0xFF447183, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added glutes workout");
             }
         });
@@ -232,7 +232,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         hamstringsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 hamstrings = 1;
-                hamstringsButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
+                hamstringsButton.getBackground().setColorFilter(0xFF447183, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added hamstrings workout");
             }
         });
@@ -240,7 +240,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         quadricepsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 quadriceps = 1;
-                quadricepsButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
+                quadricepsButton.getBackground().setColorFilter(0xFF447183, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added quadriceps workout");
             }
         });
@@ -248,7 +248,7 @@ public class AddWorkoutHandler extends AppCompatActivity {
         calvesButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 calves = 1;
-                calvesButton.getBackground().setColorFilter(0xFFAA4400, PorterDuff.Mode.MULTIPLY);
+                calvesButton.getBackground().setColorFilter(0xFF447183, PorterDuff.Mode.MULTIPLY);
                 System.out.println("Added calves workout");
             }
         });
