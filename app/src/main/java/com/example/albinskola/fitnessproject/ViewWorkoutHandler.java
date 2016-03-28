@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.Format;
 import java.text.SimpleDateFormat;
@@ -27,6 +28,7 @@ public class ViewWorkoutHandler extends AppCompatActivity {
     private CalendarView cv;
     final Context context = this;
     private int tempId;
+    int successOrNah = 0;
 
     DbConnecter db = new DbConnecter();
     public static final String PREFS_NAME = "shared_pref";
@@ -90,7 +92,7 @@ public class ViewWorkoutHandler extends AppCompatActivity {
             fitnessList.setOnItemClickListener(new AdapterView.OnItemClickListener()
             {
                 @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                     tempId = position;
 
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
@@ -105,8 +107,48 @@ public class ViewWorkoutHandler extends AppCompatActivity {
                     alertDialogBuilder
                             .setMessage(getDiaMsg())
                             .setCancelable(false)
-                            .setNegativeButton("Done",new DialogInterface.OnClickListener() {
+                            .setPositiveButton("Remove",new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog,int id) {
+                                    Thread thread1 = new Thread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            successOrNah = db.deleteWorkOut(nls.get(tempId).getId());
+
+                                        }
+                                    });
+                                    thread1.start();
+
+                                    while (successOrNah == 0) {
+
+                                    }
+
+                                    if (successOrNah == 2) {
+                                        thread1.interrupt();
+
+                                        Context context = getApplicationContext();
+                                        CharSequence text = "Workout Deleted!";
+                                        int duration = Toast.LENGTH_SHORT;
+
+                                        Toast toast = Toast.makeText(context, text, duration);
+                                        toast.show();
+
+                                        Intent intent = new Intent(ViewWorkoutHandler.this, MainMenuHandler.class);
+                                        startActivity(intent);
+                                    } else if (successOrNah == 1) {
+                                        thread1.interrupt();
+
+                                        Context context = getApplicationContext();
+                                        CharSequence text = "Workout not Deleted!";
+                                        int duration = Toast.LENGTH_SHORT;
+
+                                        Toast toast = Toast.makeText(context, text, duration);
+                                        toast.show();
+                                    }
+                                    dialog.cancel();
+                                }
+                            })
+                            .setNegativeButton("Done", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
                                     // if this button is clicked, just close
                                     // the dialog box and do nothing
                                     dialog.cancel();

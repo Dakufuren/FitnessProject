@@ -28,6 +28,16 @@ public class MainMenuHandler extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu_handler);
 
+    }
+
+    public void onClickAdd(View v){
+        System.out.println("Add Clicked!!!");
+        Intent intent = new Intent(MainMenuHandler.this, AddWorkoutHandler.class);
+        startActivity(intent);
+    }
+
+    public void onClickView(View v){
+
         pref = getApplicationContext().getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 
         Thread thread1 = new Thread(new Runnable() {
@@ -43,15 +53,10 @@ public class MainMenuHandler extends AppCompatActivity {
             }
         });
         thread1.start();
-    }
 
-    public void onClickAdd(View v){
-        System.out.println("Add Clicked!!!");
-        Intent intent = new Intent(MainMenuHandler.this, AddWorkoutHandler.class);
-        startActivity(intent);
-    }
+        while (nls == null) {
 
-    public void onClickView(View v){
+        }
 
         if(nls.size() >= 1) {
             System.out.println("View Clicked!!!");
