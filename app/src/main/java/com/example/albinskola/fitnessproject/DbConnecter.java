@@ -65,8 +65,7 @@ public class DbConnecter {
 
             Statement st = con.createStatement();
 
-            String sqlWorkout = String.format("INSERT INTO Workouts (Users_UserName, TheDate, ElapsedTime, Intensity, Note, Biceps, Triceps, Shoulders, Traps, UpperBack, LowerBack, Chest, Abdomen, Glutes, Hamstrings, Quadriceps, Calves, CaloriesBurned) VALUES ('%s', '%s', %d, %d, '%s', %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %f)", userName, date, elapsedTime, intensity, description, biceps, triceps, shoulders, traps,
-                    upperBack, lowerBack, chest, abdomen, glutes, hamstrings, quadriceps, calves, kcal);
+            String sqlWorkout = String.format("INSERT INTO Workouts (Users_UserName, TheDate, ElapsedTime, Intensity, Note, Biceps, Triceps, Shoulders, Traps, UpperBack, LowerBack, Chest, Abdomen, Glutes, Hamstrings, Quadriceps, Calves, CaloriesBurned) VALUES ('%s', '%s', %d, %d, '%s', %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %f)", userName, date, elapsedTime, intensity, description, biceps, triceps, shoulders, traps, upperBack, lowerBack, chest, abdomen, glutes, hamstrings, quadriceps, calves, kcal);
 
             st.executeUpdate(sqlWorkout);
 
@@ -178,6 +177,29 @@ public class DbConnecter {
 
 
         return isAdded;
+    }
+
+    public int deleteWorkOut(int id) {
+        int isDeleted = 2;
+
+        try {
+            connect();
+
+            Statement st = con.createStatement();
+
+            String sqlStatement = String.format("DELETE FROM Workouts WHERE ID = %d", id);
+
+            st.executeUpdate(sqlStatement);
+
+
+
+        } catch (Exception ex) {
+            System.out.println(ex);
+            isDeleted = 1;
+        }
+
+
+        return isDeleted;
     }
 
 
