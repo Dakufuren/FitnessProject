@@ -30,7 +30,10 @@
         android:id="@+id/textView2"
         android:layout_below="@+id/imageAdd"
         android:layout_alignLeft="@+id/imageAdd"
-        android:layout_alignStart="@+id/imageAdd" />
+        android:layout_alignStart="@+id/imageAdd"
+        android:layout_alignRight="@+id/imageAdd"
+        android:layout_alignEnd="@+id/imageAdd"
+        android:textAlignment="center" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -52,7 +55,10 @@
         android:id="@+id/textView3"
         android:layout_below="@+id/imageView"
         android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView" />
+        android:layout_alignStart="@+id/imageView"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView"
+        android:textAlignment="center" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -74,7 +80,10 @@
         android:id="@+id/textView4"
         android:layout_below="@+id/imageProfile"
         android:layout_alignLeft="@+id/imageProfile"
-        android:layout_alignStart="@+id/imageProfile" />
+        android:layout_alignStart="@+id/imageProfile"
+        android:layout_alignRight="@+id/imageProfile"
+        android:layout_alignEnd="@+id/imageProfile"
+        android:textAlignment="center" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -95,7 +104,10 @@
         android:id="@+id/textView5"
         android:layout_below="@+id/imageStats"
         android:layout_alignLeft="@+id/imageStats"
-        android:layout_alignStart="@+id/imageStats" />
+        android:layout_alignStart="@+id/imageStats"
+        android:layout_alignRight="@+id/imageStats"
+        android:layout_alignEnd="@+id/imageStats"
+        android:textAlignment="center" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -116,7 +128,10 @@
         android:id="@+id/textView6"
         android:layout_below="@+id/imageTips"
         android:layout_alignLeft="@+id/imageTips"
-        android:layout_alignStart="@+id/imageTips" />
+        android:layout_alignStart="@+id/imageTips"
+        android:layout_alignRight="@+id/imageTips"
+        android:layout_alignEnd="@+id/imageTips"
+        android:textAlignment="center" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -133,10 +148,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="LEFTOVER"
+        android:text="Soon"
         android:id="@+id/textView7"
         android:layout_alignTop="@+id/textView6"
         android:layout_alignLeft="@+id/imageLeftover"
-        android:layout_alignStart="@+id/imageLeftover" />
+        android:layout_alignStart="@+id/imageLeftover"
+        android:textAlignment="center"
+        android:layout_alignRight="@+id/imageLeftover"
+        android:layout_alignEnd="@+id/imageLeftover" />
 
 </RelativeLayout>
