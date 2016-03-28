@@ -88,7 +88,7 @@ public class DbConnecter {
             ResultSet rs = st.executeQuery("SELECT * FROM Workouts WHERE Users_UserName = '" + userName + "'");
 
             while (rs.next()) {
-                wo = new WorkoutObject(rs.getDate("TheDate"), rs.getInt("ElapsedTime"), rs.getInt("Intensity"), rs.getString("Note"), rs.getInt("Biceps"), rs.getInt("Triceps"), rs.getInt("Shoulders"), rs.getInt("Traps"), rs.getInt("UpperBack"), rs.getInt("LowerBack"), rs.getInt("Chest"), rs.getInt("Abdomen"), rs.getInt("Glutes"), rs.getInt("Hamstrings"), rs.getByte("Quadriceps"), rs.getInt("Calves"), rs.getDouble("CaloriesBurned"));
+                wo = new WorkoutObject(rs.getDate("TheDate"), rs.getInt("ElapsedTime"), rs.getInt("Intensity"), rs.getString("Note"), rs.getInt("Biceps"), rs.getInt("Triceps"), rs.getInt("Shoulders"), rs.getInt("Traps"), rs.getInt("UpperBack"), rs.getInt("LowerBack"), rs.getInt("Chest"), rs.getInt("Abdomen"), rs.getInt("Glutes"), rs.getInt("Hamstrings"), rs.getByte("Quadriceps"), rs.getInt("Calves"), rs.getDouble("CaloriesBurned"), rs.getInt("ID"));
                 workoutList.add(wo);
             }
         } catch (Exception ex) {
